@@ -4,7 +4,7 @@
 
 <div class="art-college-grid1">
     <div class="section-title-container" />
-    <p class="section-title-style">{linkData.sectionTitle}</p>
+    <a href={linkData.href} class="section-title-style">{linkData.sectionTitle}</a>
   </div>
 
   <style>
@@ -24,6 +24,8 @@
   border-radius: 6px;
 }
 .section-title-style {
+  all:unset;
+  cursor: pointer;
   flex: 0 0 auto;
   padding: 0;
   margin: 0;

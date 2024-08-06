@@ -2,10 +2,10 @@
     import LinkDisplay from "./LinkDisplay.svelte";
 
     let sectionTitlesArray = [
-        { sectionTitle: "Portfolio" },
-        { sectionTitle: "Cube Art" },
-        { sectionTitle: "Brick Art" },
-        { sectionTitle: "Contact Us" },
+        { sectionTitle: "Portfolio", href:"/" },
+        { sectionTitle: "Cube Art", href:"/cube-art"},
+        { sectionTitle: "Lego Art", href:"/lego-art" },
+        { sectionTitle: "Contact Us", href:"/contact-us" },
     ];
 </script>
 

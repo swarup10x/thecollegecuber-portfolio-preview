@@ -1,15 +1,16 @@
 <div class="flex-container-with-text-content">
     <p class="college-cuber-title">The College Cuber</p>
     <div class="horizontal-menu-container">
-        <p class="unique-header-style">Portfolio</p>
-        <p class="unique-header-style">Cube Art</p>
-        <p class="unique-header-style">Brick Art</p>
-        <p class="unique-header-style">Contact Us</p>
+        <a href="/" class="unique-header-style">Portfolio</a>
+        <a href="/cube-art" class="unique-header-style">Cube Art</a>
+        <a href="/lego-art" class="unique-header-style">Lego Art</a>
+        <a href="/contact-us" class="unique-header-style">Contact Us</a>
     </div>
 </div>
 
 <style>
     .flex-container-with-text-content {
+        background-color: #0a100d;
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
@@ -18,6 +19,7 @@
         justify-content: space-between;
         padding: 20px;
         width: calc(100% - 40px);
+        width: 100%;
     }
     .college-cuber-title {
         flex: 0 0 auto;
@@ -37,6 +39,8 @@
         justify-content: flex-start;
     }
     .unique-header-style {
+        all: unset;
+        cursor: pointer;
         flex: 0 0 auto;
         padding: 0;
         margin: 0;

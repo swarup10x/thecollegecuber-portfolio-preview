@@ -29,6 +29,7 @@
 
   <style>
   .cube-art-world {
+    background-color: #0a100d;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;

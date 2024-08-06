@@ -32,7 +32,7 @@
         grid-template-columns: 1fr 1fr;
         -ms-grid-rows: auto auto;
         grid-template-rows: auto auto;
-        margin-bottom: 100px;
+        padding-bottom: 100px;
     }
 
 </style>

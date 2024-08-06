@@ -15,7 +15,7 @@
         <div class="svg-container">
             <SvgLocation />
         </div>
-        <p class="email-text-display-style1">dylan@thecollegecuber.com</p>
+        <p class="email-text-display-style1">NEW JERSEY, USA</p>
     </div>
 </div>
 

@@ -49,6 +49,7 @@
     position: relative;
     height: 100vh;
     width: 100%;
+    background-color: #0a100d;
   }
   .topbar-wrapper{
     position: absolute;
