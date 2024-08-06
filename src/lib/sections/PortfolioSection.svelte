@@ -11,14 +11,7 @@
 </div>
 
 <style>
-    @media screen and (max-width: 479px) {
-        .work-grid {
-            padding-right: 5%;
-            padding-left: 5%;
-            -ms-grid-columns: 1fr;
-            grid-template-columns: 1fr;
-        }
-    }
+
     .work-grid {
         display: -ms-grid;
         display: grid;
@@ -34,5 +27,12 @@
         grid-template-rows: auto auto;
         padding-bottom: 100px;
     }
-
+    @media screen and (max-width: 640px) {
+        .work-grid {
+            padding-right: 5%;
+            padding-left: 5%;
+            -ms-grid-columns: 1fr;
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

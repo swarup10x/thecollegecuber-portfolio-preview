@@ -27,6 +27,23 @@
         clearInterval(brushTimer); // Stop changing brush size
     }
 
+    // function draw(event) {
+    //     if (!drawing) return;
+
+    //     ctx.lineWidth = brushSize;
+    //     ctx.lineCap = "round";
+    //     ctx.strokeStyle = "#EF233C";
+
+    //     const rect = canvas.getBoundingClientRect();
+    //     const x = event.clientX - rect.left;
+    //     const y = event.clientY - rect.top;
+
+    //     ctx.lineTo(x, y);
+    //     ctx.stroke();
+    //     ctx.beginPath();
+    //     ctx.moveTo(x, y);
+    // }
+
     function draw(event) {
         if (!drawing) return;
 
@@ -35,8 +52,17 @@
         ctx.strokeStyle = "#EF233C";
 
         const rect = canvas.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
+        let x, y;
+
+        if (event.touches) {
+            // Handle touch events
+            x = event.touches[0].clientX - rect.left;
+            y = event.touches[0].clientY - rect.top;
+        } else {
+            // Handle mouse events
+            x = event.clientX - rect.left;
+            y = event.clientY - rect.top;
+        }
 
         ctx.lineTo(x, y);
         ctx.stroke();
@@ -98,6 +124,16 @@
     });
 </script>
 
+<!-- <canvas
+    bind:this={canvas}
+    width={canvasWidth}
+    height={canvasHeight}
+    on:mouseenter={startDrawing}
+    on:mousedown={clearCanvas}
+    on:mousemove={draw}
+    on:mouseleave={stopDrawing}
+/> -->
+
 <canvas
     bind:this={canvas}
     width={canvasWidth}
@@ -106,6 +142,9 @@
     on:mousedown={clearCanvas}
     on:mousemove={draw}
     on:mouseleave={stopDrawing}
+    on:touchstart={startDrawing}
+    on:touchmove={draw}
+    on:touchend={stopDrawing}
 />
 
 <style>

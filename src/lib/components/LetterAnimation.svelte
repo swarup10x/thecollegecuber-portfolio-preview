@@ -7,11 +7,11 @@
     export let text = "";
 
     let letters = [];
-    export let duration =1000;
+    export let duration = 1000;
 
     onMount(() => {
         letters = text.split(/(?!$)/u);
-        console.log(duration)
+        console.log(duration);
     });
 </script>
 
@@ -26,7 +26,7 @@
                 easing: cubicOut,
             }}
         >
-        {letter !== " " ? letter : "\u00A0"}
+            {letter !== " " ? letter : "\u00A0"}
         </span>
     {/each}
 </div>
@@ -34,6 +34,26 @@
 <style>
     .letter {
         display: inline-block;
-        font: 400 80px Inter, sans-serif;
+        font:
+            400 80px Inter,
+            sans-serif;
+    }
+
+    @media screen and (max-width: 1120px) {
+        .letter {
+            font-size: 56px;
+        }
+    }
+
+    @media screen and (max-width: 720px) {
+        .letter {
+            font-size: 40px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .letter {
+            font-size: 28px;
+        }
     }
 </style>

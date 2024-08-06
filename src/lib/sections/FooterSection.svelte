@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 100%;
     padding: 94px 120px;
     border-top: 1px solid #444444;
@@ -86,5 +86,14 @@
     padding-right: 15px;
     padding-bottom: 64px;
     padding-left: 15px;
+  }
+
+
+  @media screen and (max-width: 1000px) {
+    .cube-art-world{
+      padding:100px 20px ;
+      flex-direction: column;
+      gap: 28px;
+    }
   }
   </style>

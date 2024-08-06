@@ -28,4 +28,11 @@
   color: white;
   text-align: left;
 }
+@media screen and (max-width: 480px) {
+  .intense-content-block {
+
+  font: 400 16px Inter, sans-serif;
+
+}
+  }
   </style>

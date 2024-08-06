@@ -29,6 +29,8 @@ import ReviewItem from "../components/ReviewItem.svelte";
 </div>
 
 <style>
+
+
     .primary-button {
         all: unset;
 
@@ -122,4 +124,24 @@ import ReviewItem from "../components/ReviewItem.svelte";
         max-width: initial;
         height: 8px;
     }
+
+    @media screen and (max-width: 1120px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
+    .testimonial-container1{
+        width: auto;
+    }
+    .testimonial-container {
+        width: auto;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .team-tweet-card {
+
+        flex-direction: column;
+    
+    }
+  }
 </style>

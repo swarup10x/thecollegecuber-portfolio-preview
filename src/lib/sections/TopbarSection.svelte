@@ -49,4 +49,20 @@
             sans-serif;
         color: white;
     }
+
+    @media screen and (max-width: 600px) {
+        .college-cuber-title {
+            display: none;
+        }
+
+        .unique-header-style {
+            font-size: 14px;
+        }
+
+        .horizontal-menu-container {
+            width: 100%;
+            gap: 20px;
+            justify-content: space-between;
+        }
+    }
 </style>

@@ -65,7 +65,7 @@
   .image-container {
      box-sizing: border-box;
      display: block;
-     width: 843px;
+     width: 100%;
      max-width: initial;
      height: 297px;
      border: none;
