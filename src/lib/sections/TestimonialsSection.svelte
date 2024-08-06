@@ -143,5 +143,8 @@ import ReviewItem from "../components/ReviewItem.svelte";
         flex-direction: column;
     
     }
+    .content-wrapper {
+        padding: 60px 24px 235px
+    }
   }
 </style>

@@ -17,7 +17,6 @@
 </div>
 
 <style>
-
   .content-container {
     box-sizing: border-box;
     display: flex;
@@ -56,7 +55,6 @@
     object-fit: cover;
   }
 
-
   @media screen and (max-width: 1120px) {
     .creative-process-container1 {
       flex-direction: column;
@@ -65,17 +63,17 @@
 
   @media screen and (max-width: 640px) {
     .image-container {
+      height: 326px;
+    }
 
-    height: 326px;
-
-  }
+    .creative-process-container1 {
+      padding-top: 72px;
+    }
   }
 
   @media screen and (max-width: 480px) {
     .image-container {
-
-    height: 232px;
-
-  }
+      height: 220px;
+    }
   }
 </style>
