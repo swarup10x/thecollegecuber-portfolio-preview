@@ -73,7 +73,11 @@
 
   @media screen and (max-width: 480px) {
     .image-container {
-      height: 220px;
+      height: 200px;
+    }
+
+    .content-container {
+      padding-left: 0;
     }
   }
 </style>

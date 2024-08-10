@@ -29,7 +29,7 @@
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
-        width: 1122px;
+        width: 100%;
         padding-top: 40px;
         padding-bottom: 40px;
     }
@@ -46,8 +46,22 @@
     .featured-content-box {
         box-sizing: border-box;
         flex: 0 0 auto;
-        height: 628px;
         margin-top: 48px;
         background: #d9d9d9;
+    }
+
+    @media screen and (max-width: 560px) {
+        .central-heading {
+            font-size: 18px;
+        }
+        .featured-content-container{
+            padding-top: 32px;
+        }
+        .hero-section{
+            border-radius: 16px 16px 0px 0px;
+        }
+        .featured-content-box{
+            margin-top: 32px;
+        }
     }
 </style>

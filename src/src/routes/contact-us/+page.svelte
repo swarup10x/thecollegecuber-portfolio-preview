@@ -1,0 +1,28 @@
+<script>
+    import CalendarSection from "../../lib/contact-us-sections/CalendarSection.svelte";
+import FrontContactUs from "../../lib/contact-us-sections/FrontContactUs.svelte";
+    import VideoSection from "../../lib/contact-us-sections/VideoSection.svelte";
+    import FooterSection from "../../lib/sections/FooterSection.svelte";
+    import TopbarSection from "../../lib/sections/TopbarSection.svelte";
+
+</script>
+
+<div class="wrapper">
+
+<TopbarSection/>
+<FrontContactUs/>
+
+<CalendarSection/>
+
+
+<VideoSection/>
+<FooterSection/>
+
+</div>
+
+
+<style>
+    .wrapper{
+        background-color: white;
+    }
+</style>

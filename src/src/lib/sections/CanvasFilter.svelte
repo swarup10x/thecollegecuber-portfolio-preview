@@ -122,17 +122,65 @@
         window.addEventListener("scroll", scaleCanvasOnScroll);
         
     });
+
+    function applyFilter() {
+    // Get the image data from the canvas
+    const imageData = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
+    const data = imageData.data;
+
+    // Define the new color (e.g., blue)
+    const newColor = {
+        r: 0,    // Red component
+        g: 0,    // Green component
+        b: 255   // Blue component
+    };
+
+    // Iterate through the pixel data
+    for (let i = 0; i < data.length; i += 4) {
+        // Check if the pixel is part of a drawn line (non-transparent)
+        if (data[i + 3] > 0) {
+            // Change the color of the pixel
+            data[i] = newColor.r;     // Red
+            data[i + 1] = newColor.g; // Green
+            data[i + 2] = newColor.b; // Blue
+            // Alpha channel (i + 3) remains unchanged
+        }
+    }
+
+    // Put the modified image data back on the canvas
+    ctx.putImageData(imageData, 0, 0);
+}
+
+function revertFilter() {
+    // Get the image data from the canvas
+    const imageData = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
+    const data = imageData.data;
+
+    // Define the original color (#EF233C)
+    const originalColor = {
+        r: 239,  // Red component
+        g: 35,   // Green component
+        b: 60    // Blue component
+    };
+
+    // Iterate through the pixel data
+    for (let i = 0; i < data.length; i += 4) {
+        // Check if the pixel is part of a drawn line (non-transparent)
+        if (data[i + 3] > 0) {
+            // Change the color of the pixel back to the original color
+            data[i] = originalColor.r;     // Red
+            data[i + 1] = originalColor.g; // Green
+            data[i + 2] = originalColor.b; // Blue
+            // Alpha channel (i + 3) remains unchanged
+        }
+    }
+
+    // Put the modified image data back on the canvas
+    ctx.putImageData(imageData, 0, 0);
+}
 </script>
 
-<!-- <canvas
-    bind:this={canvas}
-    width={canvasWidth}
-    height={canvasHeight}
-    on:mouseenter={startDrawing}
-    on:mousedown={clearCanvas}
-    on:mousemove={draw}
-    on:mouseleave={stopDrawing}
-/> -->
+
 
 <canvas
     bind:this={canvas}
@@ -147,9 +195,42 @@
     on:touchend={stopDrawing}
 />
 
+<button class="filter-button" on:click={applyFilter}>Apply Filter</button>
+<button class="revert-button" on:click={revertFilter}>revert Filter</button>
+
 <style>
     canvas {
         /* border: 1px solid black; */
         width: 100%;
     }
+
+    .filter-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .revert-button {
+        position: fixed;
+        top: 50px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .filter-button:hover {
+        background-color: #0056b3;
+    }
 </style>
+
+
+

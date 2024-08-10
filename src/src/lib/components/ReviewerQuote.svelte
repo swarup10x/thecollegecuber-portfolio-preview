@@ -20,4 +20,19 @@
   color: black;
   text-align: left;
 }
+
+@media screen and (max-width: 480px) {
+  .college-cuber-quote-style {
+
+  font: 400 13px Inter, sans-serif;
+
+}
+.college-cuber-quote {
+
+  height: 56px;
+  padding-top: 5.5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+}
   </style>

@@ -16,4 +16,12 @@
         background: white;
         border-radius: 6px;
     }
+
+    @media screen and (max-width: 480px) {
+        .card-container {
+            width: 168px;
+        }
+    }
+
+    
 </style>

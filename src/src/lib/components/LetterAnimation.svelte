@@ -53,7 +53,7 @@
 
     @media screen and (max-width: 480px) {
         .letter {
-            font-size: 28px;
+            font-size: 24px;
         }
     }
 </style>

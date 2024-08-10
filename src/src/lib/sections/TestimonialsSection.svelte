@@ -138,13 +138,16 @@ import ReviewItem from "../components/ReviewItem.svelte";
   }
 
   @media screen and (max-width: 480px) {
-    .team-tweet-card {
-
-        flex-direction: column;
-    
-    }
     .content-wrapper {
         padding: 60px 24px 235px
+    }
+
+    .team-tweet-card {
+        gap: 8px;
+    }
+
+    .testimonial-container1 {
+        padding-left: 0;
     }
   }
 </style>

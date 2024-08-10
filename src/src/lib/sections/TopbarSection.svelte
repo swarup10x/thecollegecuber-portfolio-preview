@@ -56,7 +56,7 @@
         }
 
         .unique-header-style {
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .horizontal-menu-container {

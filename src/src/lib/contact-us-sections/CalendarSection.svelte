@@ -4,11 +4,14 @@
       <p class="artist-call-button">Book A Call</p>
     </div>
     <div class="box">
-        <iframe src="https://calendly.com/thecollegecuber/30min?embed_domain=thecollegecuber.com&amp;embed_type=Inline&amp;hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=d13425" width="480px" height="560px" frameborder="0" title="Select a Date &amp; Time - Calendly"></iframe>
+        <iframe src="https://calendly.com/thecollegecuber/30min?embed_domain=thecollegecuber.com&amp;embed_type=Inline&amp;hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=d13425"  frameborder="0" title="Select a Date &amp; Time - Calendly"></iframe>
     </div>
   </div>
 
   <style>
+   iframe{
+      width:480px; height:560px
+   }
     .box{
         border: 1px solid #b71234;
         border-radius: 8px;
@@ -18,10 +21,9 @@
    box-sizing: border-box;
    display: flex;
    flex-direction: row;
-   gap: 8px;
+   gap: 20px;
    align-items: start;
    justify-content: space-between;
-   min-width: 998px;
    padding-right: 184px;
    padding-left: 184px;
    margin-top: 140px;
@@ -56,5 +58,27 @@
    height: 560px;
    background: #d9d9d9;
 }
+
+@media screen and (max-width: 1180px) {
+      .artist-call-section2 {
+         padding-right: 60px;
+         padding-left: 60px;
+      }
+   }
+@media screen and (max-width: 740px) {
+      .artist-call-section2 {
+         flex-direction: column;
+         align-items: center;
+
+      }
+      .artist-call-section{
+         align-items: center;
+      }
+   }
+@media screen and (max-width: 560px) {
+   iframe{
+      width:320px; height:480px
+   }
+   }
 
   </style>

@@ -75,12 +75,45 @@
 .img-style-8062128 {
    box-sizing: border-box;
    display: block;
-   width: 348px;
+   width: 336px;
    max-width: initial;
-   height: 616px;
+   height: 600px;
    border: none;
    border-radius: 12px 12px 0px 0px;
    object-fit: cover;
 }
+
+
+@media screen and (max-width: 1280px) {
+      .div-style-7c40600a {
+         padding: 148px 40px 106px;
+      }
+
+   }
+
+   @media screen and (max-width: 1000px) {
+      .div-style-2ef23751{
+         max-width: 440px;
+      }
+   }
+   @media screen and (max-width: 720px) {
+      .div-style-2ef23751{
+         max-width: 100%;
+      }
+      .div-style-7c40600a{
+         flex-direction: column;
+      }
+      .p-style-ff3ed754{
+         font-size: 16px;
+      }
+   }
+   @media screen and (max-width: 520px) {
+      .div-style-2ef23751{
+         max-width: 100%;
+      }
+      .div-style-7c40600a{
+         padding: 148px 12px 106px;
+      }
+   }
 
   </style>

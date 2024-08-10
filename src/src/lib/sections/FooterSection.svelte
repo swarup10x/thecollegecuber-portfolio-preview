@@ -9,11 +9,7 @@
     <div class="cube-art-description-block">
       <img src="images/image_8b4378be.png" class="cube-art-image" />
       <p class="creative-engineering-text-style">
-        <span>Welcome to my world of cube art, where</span>
-        <span class="vertical-spacing-divider">
-          <br />
-        </span>
-        <span>engineering and creativity unite</span>
+        <span>Welcome to my world of cube art, where engineering and creativity unite</span>
       </p>
     </div>
     <div class="cube-art-section-title-block">
@@ -95,5 +91,23 @@
       flex-direction: column;
       gap: 28px;
     }
+  }
+  @media screen and (max-width: 480px) {
+    .cube-art-description-block {
+    width: 84%;
+  }
+
+  .cube-art-section-title-block {
+
+    width: 84%;
+    padding-left: 0;
+  }
+  .contact-info-container1 {
+
+    width: 84%;
+    padding-left: 0;
+  }
+
+  
   }
   </style>

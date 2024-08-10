@@ -80,7 +80,6 @@
     .div-style-f77e6334 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, auto);
     }
 
     .div-style-1e57c643 {
@@ -222,4 +221,24 @@
         justify-content: center;
 
     }
+
+    @media screen and (max-width: 800px) {
+        .div-style-f77e6334 {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .div-style-ec3a5c18{
+        border: 1px solid black;
+    }
+
+   }
+    @media screen and (max-width: 540px) {
+        .div-style-f77e6334 {
+
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+   }
 </style>
