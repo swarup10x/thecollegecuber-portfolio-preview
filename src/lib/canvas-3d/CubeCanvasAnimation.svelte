@@ -1,8 +1,10 @@
 <script>
-    import { onMount } from "svelte";
+    import { onDestroy, onMount } from "svelte";
     import * as THREE from "three";
     import * as CANNON from "cannon";
     import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
+
+    let onMouseMove, onTouchMove, getMouseSpeed, getTouchSpeed;
 
     function rand(min, max) {
         if (max === undefined) {
@@ -103,7 +105,7 @@
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2();
 
-        function onMouseMove(event) {
+        onMouseMove=(event) =>{
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
@@ -122,7 +124,7 @@
             }
         }
 
-        function onTouchMove(event) {
+         onTouchMove=(event) =>{
             if (event.touches.length === 1) {
                 const touch = event.touches[0];
                 onMouseMove({ clientX: touch.clientX, clientY: touch.clientY });
@@ -189,7 +191,7 @@
         let lastMousePosition = { x: 0, y: 0 };
         let lastTimestamp = 0;
 
-        function getMouseSpeed(event) {
+         getMouseSpeed=(event)=> {
             const currentMousePosition = { x: event.clientX, y: event.clientY };
             console.log(currentMousePosition)
             const currentTimestamp = performance.now();
@@ -210,7 +212,7 @@
             lastTimestamp = currentTimestamp;
         }
 
-        function getTouchSpeed(event) {
+         getTouchSpeed=(event)=> {
             if (event.touches.length === 1) {
                 const touch = event.touches[0];
                 getMouseSpeed({ clientX: touch.clientX, clientY: touch.clientY });
@@ -219,10 +221,18 @@
 
         window.addEventListener("mousemove", getMouseSpeed);
         window.addEventListener("touchmove", getTouchSpeed);
+
+     
     }
 
     onMount(() => {
         main();
+        return () => {
+            window.removeEventListener("mousemove", onMouseMove);
+            window.removeEventListener("touchmove", onTouchMove);
+            window.removeEventListener("mousemove", getMouseSpeed);
+            window.removeEventListener("touchmove", getTouchSpeed);
+        };
     });
 </script>
 

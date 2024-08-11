@@ -1,8 +1,10 @@
 <script>
-    import { onMount } from "svelte";
+    import { onDestroy, onMount } from "svelte";
     import * as THREE from "three";
     import * as CANNON from "cannon";
     import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
+
+    let onMouseMove, onTouchMove, getMouseSpeed, getTouchSpeed;
 
     function rand(min, max) {
         if (max === undefined) {
@@ -17,7 +19,11 @@
         var mouseAngle = 0;
 
         const canvas = document.querySelector("#c");
-        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+        const renderer = new THREE.WebGLRenderer({
+            canvas,
+            antialias: true,
+            alpha: true,
+        });
 
         const fov = 60;
         const aspect = 2;
@@ -138,7 +144,7 @@
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2();
 
-        function onMouseMove(event) {
+        onMouseMove = (event) => {
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
@@ -159,14 +165,14 @@
                     break;
                 }
             }
-        }
+        };
 
-        function onTouchMove(event) {
+        onTouchMove = (event) => {
             if (event.touches.length === 1) {
                 const touch = event.touches[0];
                 onMouseMove({ clientX: touch.clientX, clientY: touch.clientY });
             }
-        }
+        };
 
         window.addEventListener("mousemove", onMouseMove);
         window.addEventListener("touchmove", onTouchMove);
@@ -234,7 +240,7 @@
         let lastMousePosition = { x: 0, y: 0 };
         let lastTimestamp = 0;
 
-        function getMouseSpeed(event) {
+        getMouseSpeed = (event) => {
             const currentMousePosition = { x: event.clientX, y: event.clientY };
             console.log(currentMousePosition);
             const currentTimestamp = performance.now();
@@ -253,9 +259,9 @@
 
             lastMousePosition = currentMousePosition;
             lastTimestamp = currentTimestamp;
-        }
+        };
 
-        function getTouchSpeed(event) {
+        getTouchSpeed = (event) => {
             if (event.touches.length === 1) {
                 const touch = event.touches[0];
                 getMouseSpeed({
@@ -263,7 +269,7 @@
                     clientY: touch.clientY,
                 });
             }
-        }
+        };
 
         window.addEventListener("mousemove", getMouseSpeed);
         window.addEventListener("touchmove", getTouchSpeed);
@@ -271,13 +277,18 @@
 
     onMount(() => {
         main();
+        return () => {
+            window.removeEventListener("mousemove", onMouseMove);
+            window.removeEventListener("touchmove", onTouchMove);
+            window.removeEventListener("mousemove", getMouseSpeed);
+            window.removeEventListener("touchmove", getTouchSpeed);
+        };
     });
 </script>
 
 <canvas id="c"></canvas>
 
 <style>
-
     #c {
         width: 100%;
         height: 100vh;
