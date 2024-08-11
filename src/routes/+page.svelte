@@ -22,13 +22,6 @@
     <Canvas />
   </section>
   <section class="others">
-    <!-- <div class="dummy-data">
-      <h1>sdkjbfgjskdfblk</h1>
-      <h1>sdkjbfgjskdfblk</h1>
-      <h1>sdkjbfgjskdfblk</h1>
-      <h1>sdkjbfgjskdfblk</h1>
-      <h1>sdkjbfgjskdfblk</h1>
-    </div> -->
     <PortfolioHeader />
     <PortfolioSection />
     <PortfolioHeader title="Info" />
@@ -51,7 +44,7 @@
     width: 100%;
     background-color: #0a100d;
   }
-  .topbar-wrapper{
+  .topbar-wrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -94,5 +87,12 @@
     max-width: 100%;
     vertical-align: middle;
     display: inline-block;
+  }
+
+  @media screen and (max-width: 600px) {
+    main{
+      padding-left: 12px;
+      width: calc(100% - 12px);
+    }
   }
 </style>

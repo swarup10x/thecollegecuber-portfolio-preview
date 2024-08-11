@@ -10,6 +10,9 @@
 
 <style>
     .flex-container-with-text-content {
+        position: relative;
+        z-index: 100;
+        
         background-color: #0a100d;
         box-sizing: border-box;
         display: flex;
@@ -18,7 +21,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 20px;
-        width: calc(100% - 40px);
+        /* width: calc(100% - 40px); */
         width: 100%;
     }
     .college-cuber-title {

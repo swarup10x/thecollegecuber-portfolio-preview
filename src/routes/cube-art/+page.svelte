@@ -8,17 +8,25 @@
     import WorkInfo from "../../lib/art-sections/WorkInfo.svelte";
     import TopbarSection from "../../lib/sections/TopbarSection.svelte";
     import FooterSection from "../../lib/sections/FooterSection.svelte";
+    import CubeCanvasAnimation from "../../lib/canvas-3d/CubeCanvasAnimation.svelte";
 </script>
 
 <div class="wrapper">
     <TopbarSection />
-    <FrontView />
+
+    <div class="main-wrapper">
+        <div class="canvas-wrapper">
+            <CubeCanvasAnimation />
+        </div>
+        <div class="front-view-wrapper">
+            <FrontView />
+        </div>
+    </div>
 
     <HowItWorks />
 
     <div class="mid-section">
         <FaqSection />
-
         <WorkInfo />
         <SlicedImages />
     </div>
@@ -31,6 +39,18 @@
 </div>
 
 <style>
+    .main-wrapper {
+        height: 100vh;
+    }
+
+    .canvas-wrapper {
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0%;
+    }
+
     .wrapper {
         background-color: white;
     }
@@ -43,14 +63,13 @@
 
     @media screen and (max-width: 1280px) {
         .mid-section {
-        padding: 100px 40px;
+            padding: 100px 40px;
+        }
     }
 
-   }
-
-   @media screen and (max-width: 500px) {
-    .mid-section{
-        padding: 100px 12px;
-  }
-}
+    @media screen and (max-width: 500px) {
+        .mid-section {
+            padding: 100px 12px;
+        }
+    }
 </style>
