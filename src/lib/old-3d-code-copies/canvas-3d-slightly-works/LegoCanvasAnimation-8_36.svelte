@@ -2,7 +2,7 @@
     import { onDestroy, onMount } from "svelte";
     import * as THREE from "three";
     import * as CANNON from "cannon";
-    import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
+    import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
     let onMouseMove, onTouchMove, getMouseSpeed, getTouchSpeed;
 
@@ -21,9 +21,12 @@
         const canvas = document.querySelector("#c");
         const renderer = new THREE.WebGLRenderer({
             canvas,
-            antialias: true,
+            antialias: false,
             alpha: true,
         });
+
+        let isModelsLoaded = false;
+        let isVelocityDampened = false;
 
         const fov = 60;
         const aspect = 2;
@@ -50,83 +53,116 @@
         const maxSubSteps = 3;
 
         const objects = [];
-        const numObjects = 24; // 6 types of Lego, 3 of each
+        const numObjects = 24;
 
+        const loader = new FBXLoader();
         const legos = [
-            "lego1x4",
-            "lego1x6x5",
-            "lego2x2",
-            "lego2x2_no_pin_vertical",
-            "lego2x3",
-            "lego2x6",
+            { title: "Cube-1x1-hollow", mass: 1 },
+            { title: "Cube-1x1-round-tall", mass: 1 },
+            { title: "Cube-1x1-round", mass: 1 },
+            { title: "Cube-1x1-tall-hollow", mass: 1.5 },
+            { title: "Cube-1x1-tall", mass: 1.5 },
+            { title: "Cube-1x1", mass: 1 },
+            { title: "Cube-1x2-hollow", mass: 2 },
+            { title: "Cube-1x2", mass: 2 },
+            { title: "Cube-2x2-hollow", mass: 4 },
+            { title: "Cube-2x2", mass: 4 },
+            { title: "Cube-3x1-hollow", mass: 3 },
+            { title: "Cube-3x1", mass: 3 },
+            { title: "Cube-3x2-hollow", mass: 5 },
+            { title: "Cube-3x2", mass: 6 },
+            { title: "Cube-4x1", mass: 4 },
+            { title: "Cube-4x2-hollow", mass: 8 },
+            { title: "Cube-4x2", mass: 8 },
+            { title: "Cube-5x2-hollow", mass: 10 },
+            { title: "Cube-5x2", mass: 10 },
         ];
-        const stlSrc = "/stls";
-
-        const loader = new STLLoader();
-
+        const legoSrc = "/lego-models";
         legos.forEach((lego) => {
-            for (let i = 0; i < 4; i++) {
-                loader.load(
-                    `${stlSrc}/${lego}.stl`,
-                    (geometry) => {
-                        const material = new THREE.MeshPhongMaterial({
-                            color: Math.random() * 0xffffff,
-                        });
-                        const mesh = new THREE.Mesh(geometry, material);
+            loader.load(
+                `${legoSrc}/${lego.title}.fbx`,
+                (fbx) => {
+                    fbx.scale.set(0.015, 0.015, 0.015); // Adjust scale as needed
 
-                        // Adjust scale as needed
-                        mesh.scale.set(0.25, 0.25, 0.25);
+                    // Traverse the loaded model to adjust materials
+                    fbx.traverse((child) => {
+                        if (child.isMesh) {
+                            // Ensure the loaded material is not transparent
+                            if (child.material) {
+                                child.material.transparent = false;
+                                child.material.opacity = 1;
+                                child.material.side = THREE.DoubleSide;
+                                child.material.color.setHex(
+                                    Math.random() * 0xffffff,
+                                );
+                            } else {
+                                // If no material, create a new one
+                                child.material = new THREE.MeshPhongMaterial({
+                                    color: Math.random() * 0xffffff,
+                                    opacity: 1,
+                                    transparent: false,
+                                    side: THREE.DoubleSide,
+                                });
+                            }
+                        }
+                    });
 
-                        // Calculate bounding box to get dimensions
-                        geometry.computeBoundingBox();
-                        const box = geometry.boundingBox;
-                        const size = new THREE.Vector3();
-                        box.getSize(size);
+                    const legoModel = fbx.clone();
 
-                        // Create a Cannon.js body
-                        const halfExtents = new CANNON.Vec3(
-                            size.x * 0.05,
-                            size.y * 0.05,
-                            size.z * 0.05,
-                        );
-                        const boxShape = new CANNON.Box(halfExtents);
-                        const boxBody = new CANNON.Body({
-                            mass: 1,
-                            position: new CANNON.Vec3(
-                                rand(-20, 20),
-                                rand(-20, 20),
-                                rand(-20, 20),
-                            ),
-                            shape: boxShape,
-                            material: new CANNON.Material(),
-                            linearDamping: 0.1,
-                            angularDamping: 0.5,
-                        });
+                    // Calculate bounding box to get dimensions
+                    const boundingBox = new THREE.Box3().setFromObject(
+                        legoModel,
+                    );
+                    const size = new THREE.Vector3();
+                    boundingBox.getSize(size);
 
-                        // Set proper inertia
-                        const volume = size.x * size.y * size.z;
-                        const density = 1 / (volume * 0.001); // Adjust density as needed
-                        boxBody.updateMassProperties();
+                    // Create a Cannon.js body based on the bounding box
+                    const halfExtents = new CANNON.Vec3(
+                        size.x / 2,
+                        size.y / 2,
+                        size.z / 2,
+                    );
+                    const boxShape = new CANNON.Box(halfExtents);
+                    // Set proper inertia
+                    const volume = size.x * size.y * size.z;
+                    const density = 1 / (volume * 0.001); // Adjust density as needed
+                    const mass = lego.mass;
+                    const boxBody = new CANNON.Body({
+                        mass: mass,
+                        position: new CANNON.Vec3(
+                            rand(-15, 15),
+                            rand(-15, 15),
+                            rand(-5, 0),
+                        ),
+                        shape: boxShape,
+                        material: new CANNON.Material(),
+                        linearDamping: 0.1,
+                        angularDamping: 0.5,
+                    });
 
-                        world.addBody(boxBody);
+                    boxBody.updateMassProperties();
 
-                        mesh.position.copy(boxBody.position);
-                        scene.add(mesh);
+                    world.addBody(boxBody);
 
-                        objects.push({
-                            body: boxBody,
-                            mesh: mesh,
-                            moveDistance: 0,
-                            mouseSpeed: 0,
-                            mouseAngle: 0,
-                        });
-                    },
-                    undefined,
-                    (error) => {
-                        console.error("An error happened", error);
-                    },
-                );
-            }
+                    legoModel.position.copy(boxBody.position);
+                    scene.add(legoModel);
+
+                    objects.push({
+                        body: boxBody,
+                        mesh: legoModel,
+                        moveDistance: 0,
+                        mouseSpeed: 0,
+                        mouseAngle: 0,
+                    });
+                    if (objects.length >= legos.length) {
+                        isModelsLoaded = true;
+                    }
+                },
+                undefined,
+                (error) => {
+                    console.error(`Error loading model ${lego}:`, error);
+                },
+            );
         });
 
         function resizeRendererToDisplaySize(renderer) {
@@ -180,16 +216,18 @@
         function updateObjects() {
             for (let obj of objects) {
                 if (obj.moveDistance > 0) {
-                    const speedMultiplier = 30; // Reduced from 50
-                    const velocity = new CANNON.Vec3(
+                    obj.body.velocity.z = 0;
+                    const speedMultiplier = 50; // Reduced from 50
+                    let velocity = new CANNON.Vec3(
                         obj.mouseSpeed *
                             speedMultiplier *
-                            Math.cos(obj.mouseAngle),
+                            Math.cos(obj.mouseAngle)/obj.body.mass,
                         obj.mouseSpeed *
                             speedMultiplier *
-                            Math.sin(-obj.mouseAngle),
+                            Math.sin(-obj.mouseAngle)/obj.body.mass,
                         0,
                     );
+    
                     obj.body.velocity.copy(velocity);
                     obj.body.angularVelocity.set(0, 0, 0); // Reset angular velocity
                     obj.moveDistance -= 1;
@@ -207,6 +245,23 @@
                         });
                     }
                 }
+
+                
+            }
+            if (isModelsLoaded && !isVelocityDampened) {
+                isVelocityDampened = true;
+                function delay(ms) {
+                    return new Promise((resolve) => setTimeout(resolve, ms));
+                }
+                delay(100).then(() => {
+                    console.log("Executed after 2 seconds");
+                    console.log("updating isModelsLoaded && !isVelocityDampened");
+
+                    for (let obj of objects) {
+                        obj.body.velocity.set(0, 0, 0);
+                        obj.body.angularVelocity.set(0, 0, 0);
+                    }
+                });
             }
         }
 
@@ -242,7 +297,7 @@
 
         getMouseSpeed = (event) => {
             const currentMousePosition = { x: event.clientX, y: event.clientY };
-            console.log(currentMousePosition);
+            // console.log(currentMousePosition);
             const currentTimestamp = performance.now();
 
             if (lastTimestamp) {

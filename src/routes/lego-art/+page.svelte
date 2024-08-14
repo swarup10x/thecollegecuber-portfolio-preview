@@ -8,7 +8,7 @@
     import WorkInfo from "../../lib/art-sections/WorkInfo.svelte";
     import TopbarSection from "../../lib/sections/TopbarSection.svelte";
     import FooterSection from "../../lib/sections/FooterSection.svelte";
-    import LegoCanvasAnimation from "../../lib/canvas-3d/LegoCanvasAnimation.svelte";
+    import SplineLegoAnimation from "../../lib/animations-3d/SplineLegoAnimation.svelte";
 </script>
 
 <div class="wrapper">
@@ -16,7 +16,8 @@
 
     <div class="main-wrapper">
         <div class="canvas-wrapper">
-            <LegoCanvasAnimation />
+            <!-- <LegoCanvasAnimation /> -->
+             <SplineLegoAnimation/>
         </div>
         <div class="front-view-wrapper">
             <FrontView />
