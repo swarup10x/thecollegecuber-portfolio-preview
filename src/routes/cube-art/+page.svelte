@@ -9,6 +9,7 @@
     import TopbarSection from "../../lib/sections/TopbarSection.svelte";
     import FooterSection from "../../lib/sections/FooterSection.svelte";
     import SplineLegoAnimation from "../../lib/animations-3d/SplineLegoAnimation.svelte";
+    import SplineRubiksCubeAnimation from "../../lib/animations-3d/SplineRubiksCubeAnimation.svelte";
 </script>
 
 <div class="wrapper">
@@ -17,7 +18,8 @@
     <div class="main-wrapper">
         <div class="canvas-wrapper">
             <!-- <CubeCanvasAnimation /> -->
-            <SplineLegoAnimation/>
+            <!-- <SplineLegoAnimation/> -->
+             <SplineRubiksCubeAnimation/>
         </div>
         <div class="front-view-wrapper">
             <FrontView />
