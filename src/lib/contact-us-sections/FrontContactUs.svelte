@@ -1,3 +1,8 @@
+<script>
+       import { fly } from "svelte/transition";
+       import { quintOut } from "svelte/easing";
+</script>
+
 <div class="artist-profile-container2">
    <div class="artist-profile-container">
       <img
@@ -9,6 +14,13 @@
       <div class="artist-profile-card">
          <p class="artist-bio-container">
             <span
+            transition:fly={{
+               delay: 250,
+               duration: 600,
+               x: 800,
+               opacity: 0.5,
+               easing: quintOut,
+           }}
                class="artist-name-text-style vertical-spacing-divider inter-sans-artist red-text"
                >Dylan Sadiq</span
             ><span
