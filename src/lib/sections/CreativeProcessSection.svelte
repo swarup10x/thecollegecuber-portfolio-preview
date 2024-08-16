@@ -1,18 +1,47 @@
 <script>
   import CreativeNarrativeBlock from "../components/CreativeNarrativeBlock.svelte";
   import CreativeProcessSnippet from "../components/CreativeProcessSnippet.svelte";
+
+  import { fly } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
+  import { onMount } from "svelte";
+  import { inview } from "svelte-inview";
+
+  let isInView;
+  const options = {};
+
+  function changeInview(event) {
+    const { inView, entry, scrollDirection, observer, node } = event.detail;
+    isInView = inView;
+    console.log("let isInView: boolean;", isInView);
+  }
 </script>
 
-<div class="content-container">
+<div
+  use:inview={options}
+  on:inview_change={changeInview}
+  class="content-container"
+>
   <div class="creative-process-container1">
-    <div class="creative-process-container">
-      <img src="images/Rectangle-16.jpg" class="image-container" />
-      <CreativeNarrativeBlock />
-    </div>
-    <div class="creative-process-container">
-      <CreativeProcessSnippet />
-      <img src="images/Rectangle-16-1.jpg" class="image-container" />
-    </div>
+    {#if isInView}
+      <div
+        transition:fly={{
+          delay: 350,
+          duration: 650,
+          y: 100,
+          opacity: 0.5,
+          easing: quintOut,
+        }}
+        class="creative-process-container"
+      >
+        <img src="images/Rectangle-16.jpg" class="image-container" />
+        <CreativeNarrativeBlock />
+      </div>
+      <div class="creative-process-container">
+        <CreativeProcessSnippet />
+        <img src="images/Rectangle-16-1.jpg" class="image-container" />
+      </div>
+    {/if}
   </div>
 </div>
 

@@ -366,26 +366,35 @@
   @media screen and (max-width: 740px) {
     .div-style-c76d0442 {
       flex-direction: column;
-      
     }
-    .div-style-da0b6752{
+    .div-style-f77e6334 {
+      padding-bottom: 10px;
+    }
+
+    .p-style-c562f7c8 {
+      margin-top: 8px;
+    }
+    .div-style-da0b6752 {
       width: auto;
       padding-left: 0;
       padding-right: 0;
     }
-    .div-style-3f4bbe8d{
+    .div-style-3f4bbe8d {
       width: auto;
       background-color: white;
       padding-bottom: 12px;
+    }
+    .p-style-741a4d3d {
+      max-width: 100%;
+      font:
+        400 14px Inter,
+        sans-serif;
+    }
   }
-  .p-style-741a4d3d{
-    max-width: 100%;
+  @media screen and (max-width: 500px) {
+    .div-style-a36f431 {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
   }
-}
-@media screen and (max-width: 500px) {
-  .div-style-a36f431{
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
 </style>

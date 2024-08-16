@@ -20,6 +20,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@splinetool/runtime": "^1.9.12"
+		"@splinetool/runtime": "^1.9.12",
+		"svelte-inview": "^4.0.2"
 	}
 }

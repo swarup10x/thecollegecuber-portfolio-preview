@@ -21,7 +21,7 @@
   text-align: left;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 580px) {
   .college-cuber-quote-style {
 
   font: 400 13px Inter, sans-serif;

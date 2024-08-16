@@ -49,7 +49,7 @@
     color: #bd2646;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 580px) {
     .profile-image-container {
       width: 28px;
 

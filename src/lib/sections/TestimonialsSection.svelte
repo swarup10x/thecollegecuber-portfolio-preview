@@ -1,42 +1,73 @@
 <script>
-    import { fly } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+    import { fly } from "svelte/transition";
+    import { quintOut } from "svelte/easing";
+    import { onMount } from "svelte";
+    import { inview } from "svelte-inview";
 
     import CircularSelector from "../components/CircularSelector.svelte";
     import ReviewItem from "../components/ReviewItem.svelte";
-    import { onMount } from 'svelte';
 
-    onMount(()=>{
-        console.log("review mounted")
-    })
+    onMount(() => {
+        console.log("review mounted");
+    });
 
+    let isInView;
+    const options = {};
 
-
+    function changeInview(event) {
+        const { inView, entry, scrollDirection, observer, node } = event.detail;
+        isInView = inView;
+        console.log("let isInView: boolean;", isInView);
+    }
 </script>
 
-<div class="content-wrapper">
-    <div class="testimonial-container">
-        <p class="testimonial-heading">What they have to say</p>
-        <p class="artist-quote">
-            An artist inherently appreciates their own creations, but the most
-            remarkable experience is when others wholeheartedly endorse their
-            work.
-        </p>
+<div
+    class="content-wrapper"
+    use:inview={options}
+    on:inview_change={changeInview}
+>
+    {#if isInView}
+        <div
+            transition:fly={{
+                delay: 250,
+                duration: 600,
+                x: -100,
+                opacity: 0.5,
+                easing: quintOut,
+            }}
+            class="testimonial-container"
+        >
+            <p class="testimonial-heading">What they have to say</p>
+            <p class="artist-quote">
+                An artist inherently appreciates their own creations, but the
+                most remarkable experience is when others wholeheartedly endorse
+                their work.
+            </p>
 
-        <button class="primary-button">Contact Us</button>
-    </div>
-    <div class="testimonial-container1">
-        <div transition:fly={{ delay: 250, duration: 300, x: -100, opacity: 0.5, easing: quintOut }} class="team-tweet-card">
-            <ReviewItem />
-            <ReviewItem />
+            <button class="primary-button">Contact Us</button>
         </div>
-        <div class="center-image-container">
-            <CircularSelector selected={true} />
-            <CircularSelector />
-            <CircularSelector />
-            <CircularSelector />
+        <div class="testimonial-container1">
+            <div
+                transition:fly={{
+                    delay: 250,
+                    duration: 600,
+                    x: 100,
+                    opacity: 0.5,
+                    easing: quintOut,
+                }}
+                class="team-tweet-card"
+            >
+                <ReviewItem />
+                <ReviewItem />
+            </div>
+            <div class="center-image-container">
+                <CircularSelector selected={true} />
+                <CircularSelector />
+                <CircularSelector />
+                <CircularSelector />
+            </div>
         </div>
-    </div>
+    {/if}
 </div>
 
 <style>
@@ -146,7 +177,13 @@
         }
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 740px) {
+        .content-wrapper {
+            padding: 60px 24px 235px;
+        }
+    }
+
+    @media screen and (max-width: 580px) {
         .content-wrapper {
             padding: 60px 24px 235px;
         }
