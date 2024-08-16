@@ -1,6 +1,17 @@
 <script>
+    import { fly } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
+
     import CircularSelector from "../components/CircularSelector.svelte";
-import ReviewItem from "../components/ReviewItem.svelte";
+    import ReviewItem from "../components/ReviewItem.svelte";
+    import { onMount } from 'svelte';
+
+    onMount(()=>{
+        console.log("review mounted")
+    })
+
+
+
 </script>
 
 <div class="content-wrapper">
@@ -15,22 +26,20 @@ import ReviewItem from "../components/ReviewItem.svelte";
         <button class="primary-button">Contact Us</button>
     </div>
     <div class="testimonial-container1">
-        <div class="team-tweet-card">
+        <div transition:fly={{ delay: 250, duration: 300, x: -100, opacity: 0.5, easing: quintOut }} class="team-tweet-card">
             <ReviewItem />
             <ReviewItem />
         </div>
         <div class="center-image-container">
-            <CircularSelector selected={true}/>
-            <CircularSelector/>
-            <CircularSelector/>
-            <CircularSelector/>
+            <CircularSelector selected={true} />
+            <CircularSelector />
+            <CircularSelector />
+            <CircularSelector />
         </div>
     </div>
 </div>
 
 <style>
-
-
     .primary-button {
         all: unset;
 
@@ -126,28 +135,28 @@ import ReviewItem from "../components/ReviewItem.svelte";
     }
 
     @media screen and (max-width: 1120px) {
-    .content-wrapper {
-      flex-direction: column;
-    }
-    .testimonial-container1{
-        width: auto;
-    }
-    .testimonial-container {
-        width: auto;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .content-wrapper {
-        padding: 60px 24px 235px
+        .content-wrapper {
+            flex-direction: column;
+        }
+        .testimonial-container1 {
+            width: auto;
+        }
+        .testimonial-container {
+            width: auto;
+        }
     }
 
-    .team-tweet-card {
-        gap: 8px;
-    }
+    @media screen and (max-width: 480px) {
+        .content-wrapper {
+            padding: 60px 24px 235px;
+        }
 
-    .testimonial-container1 {
-        padding-left: 0;
+        .team-tweet-card {
+            gap: 8px;
+        }
+
+        .testimonial-container1 {
+            padding-left: 0;
+        }
     }
-  }
 </style>

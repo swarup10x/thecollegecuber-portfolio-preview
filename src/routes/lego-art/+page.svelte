@@ -60,6 +60,7 @@
         padding: 100px;
         display: grid;
         gap: 100px;
+        place-items: center;
     }
 
     @media screen and (max-width: 1280px) {

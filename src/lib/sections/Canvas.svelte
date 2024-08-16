@@ -127,7 +127,7 @@
         canvas.style.transform = `scale(${scaleFactor})`;
 
         if(window.scrollY > window.innerHeight){
-            console.log('scaleFactor',scaleFactor)
+            // console.log('scaleFactor',scaleFactor)
             if(scaleFactor< 1.05){
                 applyFilter({r: 0,g: 0,b: 255})
             }else if(scaleFactor<1.1){

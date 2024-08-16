@@ -5,10 +5,10 @@
         <p class="p-style-c654f723">FAQs</p>
     </div>
 
-    <div class="div-style-a8da91ad">
+    <div class="div-style-a8da91ad border-bottom-none">
         <img src="/art-page-images/image_8ed144eb.png" class="img-style-b9f5d209" />
         <div class="div-style-76bb893">
-            <p class="p-style-a82e0280">How long does it take?</p>
+            <p class="p-style-a82e0280 ">How long does it take?</p>
             <p class="p-style-f3a2391a">
                 Just under 3 hours, from the placement of the first cube
                 to the final one. However, Thanks to my careful
@@ -18,7 +18,7 @@
             </p>
         </div>
     </div>
-    <div class="div-style-ec3a5c18">
+    <div class="div-style-ec3a5c18 border-bottom-none">
         <img src="/art-page-images/image_c6ed19ef.png" class="img-style-b9f5d209" />
         <div class="div-style-76bb893">
             <p class="p-style-a82e0280">How long does it take?</p>
@@ -36,7 +36,7 @@
 
 
 
-    <div class="div-style-52e303a5">
+    <div class="div-style-52e303a5 border-bottom-none">
         <img src="/art-page-images/image_8ed144eb.png" class="img-style-b9f5d209" />
         <div class="div-style-76bb893">
             <p class="p-style-a82e0280">How long does it take?</p>
@@ -61,7 +61,7 @@
             </p>
         </div>
     </div>
-    <div class="div-style-52e303a5">
+    <div class="div-style-52e303a5 border-top-none">
         <img src="/art-page-images/image_c6ed19ef.png" class="img-style-b9f5d209" />
         <div class="div-style-76bb893">
             <p class="p-style-a82e0280">How long does it take?</p>
@@ -80,6 +80,7 @@
     .div-style-f77e6334 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        max-width: 1280px;
     }
 
     .div-style-1e57c643 {
@@ -114,17 +115,7 @@
         color: black;
     }
 
-    .div-style-623c6660 {
-        box-sizing: border-box;
-        display: flex;
-        flex: 0 0 auto;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        width: 68.69%;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+
 
     .div-style-a8da91ad {
         box-sizing: border-box;
@@ -136,7 +127,8 @@
 
         padding: 59px 32px 89px;
         background: #f9f9f9;
-        border: 1px solid black;
+        border: 1px solid #939393;
+    
     }
 
     .img-style-b9f5d209 {
@@ -187,16 +179,7 @@
         background: #f9f9f9;
     }
 
-    .div-style-9ac6126 {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        gap: 32px;
-        align-items: flex-start;
-        justify-content: space-between;
-        width: 100%;
-        padding-right: 17px;
-    }
+
 
     .div-style-52e303a5 {
         box-sizing: border-box;
@@ -208,7 +191,7 @@
 
         padding: 59px 32px 89px;
         background: #f9f9f9;
-        border: 1px solid black;
+        border: 1px solid #939393;
     }
 
     .div-style-786fe775 {
@@ -222,21 +205,32 @@
 
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 940px) {
         .div-style-f77e6334 {
 
         grid-template-columns: repeat(2, 1fr);
     }
 
     .div-style-ec3a5c18{
-        border: 1px solid black;
+        border: 1px solid #939393;
+        border-right: none;
+    }
+    .border-bottom-none {
+        border-bottom: none;
     }
 
    }
-    @media screen and (max-width: 540px) {
+    @media screen and (max-width: 640px) {
         .div-style-f77e6334 {
 
         grid-template-columns: repeat(1, 1fr);
+        
+    }
+    .div-style-ec3a5c18{
+        border-right: 1px solid #939393;
+    }
+    .border-top-none {
+        border-top: none;
     }
 
 

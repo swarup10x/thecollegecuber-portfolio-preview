@@ -87,10 +87,14 @@
 
   @media screen and (max-width: 1000px) {
     .cube-art-world{
-      padding:100px 20px ;
+      padding:100px 20px 20px 20px ;
       flex-direction: column;
       gap: 28px;
+  
     }
+    .cube-art-description-block {
+    width: 64%;
+  }
   }
   @media screen and (max-width: 480px) {
     .cube-art-description-block {
