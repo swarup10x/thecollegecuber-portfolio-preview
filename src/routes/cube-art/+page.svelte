@@ -1,6 +1,5 @@
 <script>
     import FaqSection from "../../lib/art-sections/FAQSection.svelte";
-    import FrontView from "../../lib/art-sections/FrontView.svelte";
     import HowItWorks from "../../lib/art-sections/HowItWorks.svelte";
     import OurPackages from "../../lib/art-sections/OurPackages.svelte";
     import OurStory from "../../lib/art-sections/OurStory.svelte";
@@ -8,8 +7,8 @@
     import WorkInfo from "../../lib/art-sections/WorkInfo.svelte";
     import TopbarSection from "../../lib/sections/TopbarSection.svelte";
     import FooterSection from "../../lib/sections/FooterSection.svelte";
-    import SplineLegoAnimation from "../../lib/animations-3d/SplineLegoAnimation.svelte";
     import SplineRubiksCubeAnimation from "../../lib/animations-3d/SplineRubiksCubeAnimation.svelte";
+    import FrontViewCube from "../../lib/art-sections/FrontViewCube.svelte";
 </script>
 
 <div class="wrapper">
@@ -22,7 +21,7 @@
              <SplineRubiksCubeAnimation/>
         </div>
         <div class="front-view-wrapper">
-            <FrontView />
+            <FrontViewCube />
         </div>
     </div>
 
