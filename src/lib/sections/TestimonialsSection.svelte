@@ -19,6 +19,21 @@
         isInView = inView;
         console.log("let isInView: boolean;", isInView);
     }
+
+    let reviews = [
+        {
+            fullName: "New York Jets",
+            shortName: "@nyjets",
+            logoSrc: "images/reviews/image_2d2546ce.png",
+            quote: "The College Cuber is CRAZY",
+        },
+        {
+            fullName: "Detroit Tigers",
+            shortName: "@tigers",
+            logoSrc: "images/reviews/800px-Detroit_Tigers_Insigniasvg-photoaidcom-cropped.png",
+            quote: "This Miggy portrait is awesome!",
+        },
+    ];
 </script>
 
 <div
@@ -57,8 +72,8 @@
                 }}
                 class="team-tweet-card"
             >
-                <ReviewItem />
-                <ReviewItem />
+                <ReviewItem review={reviews[0]}/>
+                <ReviewItem review={reviews[1]}/>
             </div>
             <div class="center-image-container">
                 <CircularSelector selected={true} />

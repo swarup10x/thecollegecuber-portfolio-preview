@@ -1,10 +1,14 @@
+<script>
+   export let type="LEGO"
+</script>
+
 <div class="div-style-8a4f0d84">
    <div class="div-style-62fb68f0">
       <div class="div-style-985abbe8">
          <div class="div-style-7ae3c965">
             <p class="p-style-470d2aea">11.06.2024 - Dylan Sadiq</p>
             <div class="div-style-fcecbe7c">
-               <p class="p-style-ca64b29a">LEGO</p>
+               <p class="p-style-ca64b29a">{type}</p>
                <p class="p-style-e426f71c">art</p>
                <p class="p-style-ca64b29a">LIVE PERFORMANCE</p>
                <p class="p-style-e426f71c">art</p>
@@ -15,7 +19,7 @@
       <div class="div-style-985abbe8">
          <div class="div-style-11f5f604">
             <p class="p-style-eba95666">
-               A day for everyone to play with LEGO®
+               A day for everyone to play with {type}®
             </p>
             <p class="p-style-643330">Perfect for events</p>
          </div>

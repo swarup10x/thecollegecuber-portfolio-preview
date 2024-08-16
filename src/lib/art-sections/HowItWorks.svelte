@@ -1,14 +1,20 @@
+<script>
+   export let videoSrc
+   export let howItWorks
+   export let artType
+</script>
+
 <div class="div-style-7c40600a">
     <div class="div-style-2ef23751">
       <div class="div-style-f77e6334">
         <p class="p-style-a2858846">How It Works</p>
-        <p class="p-style-81519ffb">Live Brick Art</p>
+        <p class="p-style-81519ffb">Live {artType} Art</p>
       </div>
-      <p class="p-style-ff3ed754">My ultimate goal as an artist is to craft an insanely interactive and thrilling journey for everyone involved. As soon as guests step in, they&apos;ll be met with the mesmerizing sight of an art piece in progress. Each attendee will be handed their very own unique design card and tasked with bringing it to life on their baseplate, using any colors they need! Once they&apos;ve nailed it, they get to proudly add their creation to the evolving masterpiece! And guess what? They&apos;re not just participants, they&apos;re official artists, complete with the honor of signing the art frame! By the end of the event, we&apos;ll have bonded, laughed, and collaborated to create something truly extraordinary. Hundreds of new friendships formed, all in the name of art! Let&apos;s make memories and masterpieces together!</p>
+      <p class="p-style-ff3ed754">{howItWorks}</p>
       <!-- Button Component is detected here -->
       <button class="button-style-8ad96753">Book a Call</button>
     </div>
-    <video class="img-style-8062128" src="https://thecollegecuber.com/wp-content/uploads/2024/05/US-Open-LEGO.mp4" autoplay="true" loop="true" controls muted="muted" playsinline="" controlslist="nodownload"></video>
+    <video class="img-style-8062128" src={videoSrc} autoplay="true" loop="true" controls muted="muted" playsinline="" controlslist="nodownload"></video>
   </div>
 
   

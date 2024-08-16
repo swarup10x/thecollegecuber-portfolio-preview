@@ -1,8 +1,15 @@
+<script>
+  export let fullName="New York Jets"
+  export let shortName="@nyjets"
+  export let logoSrc="images/image_2d2546ce.png"
+  
+</script>
+
 <div class="team-profile-card">
-  <img src="images/image_2d2546ce.png" class="profile-image-container" />
+  <img src={logoSrc} class="profile-image-container" />
   <div class="team-info-container">
-    <p class="team-info-display-style">New York Jets</p>
-    <p class="brand-text-styles">@nyjets</p>
+    <p class="team-info-display-style">{fullName}</p>
+    <p class="brand-text-styles">{shortName}</p>
   </div>
 </div>
 
