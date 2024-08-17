@@ -1,5 +1,12 @@
+<script>
+    import FancyLogo from "../components/FancyLogo.svelte";
+</script>
+
 <div class="flex-container-with-text-content">
-    <p class="college-cuber-title">The College Cuber</p>
+    <!-- <p class="college-cuber-title">The College Cuber</p> -->
+    <div class="college-cuber-title">
+        <FancyLogo />
+    </div>
     <div class="horizontal-menu-container">
         <a href="/" class="unique-header-style">Portfolio</a>
         <a href="/cube-art" class="unique-header-style">Cube Art</a>
@@ -12,7 +19,7 @@
     .flex-container-with-text-content {
         position: relative;
         z-index: 100;
-        
+
         background-color: #0a100d;
         box-sizing: border-box;
         display: flex;

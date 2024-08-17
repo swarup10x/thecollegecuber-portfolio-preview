@@ -1,7 +1,9 @@
 <script>
     export let selected=false
+
+    export let onClick
 </script>
-<div class:selected class="circular-selector"></div>
+<div class:selected class="circular-selector" on:click={onClick}></div>
 
 <style>
     .circular-selector {

@@ -1,6 +1,6 @@
 <script>
     import { fly } from "svelte/transition";
-    import { quintOut } from "svelte/easing";
+    import { quintOut,linear } from "svelte/easing";
     import { onMount } from "svelte";
     import { inview } from "svelte-inview";
 
@@ -25,15 +25,56 @@
             fullName: "New York Jets",
             shortName: "@nyjets",
             logoSrc: "images/reviews/image_2d2546ce.png",
-            quote: "The College Cuber is CRAZY",
+            quote: "The College Cuber is CRAZY! 🤯",
         },
         {
             fullName: "Detroit Tigers",
             shortName: "@tigers",
-            logoSrc: "images/reviews/800px-Detroit_Tigers_Insigniasvg-photoaidcom-cropped.png",
-            quote: "This Miggy portrait is awesome!",
+            logoSrc:
+                "images/reviews/800px-Detroit_Tigers_Insigniasvg-photoaidcom-cropped.png",
+            quote: "This Miggy portrait is awesome! 🤯",
+        },
+        {
+            fullName: "New York Knicks",
+            shortName: "@nyknicks",
+            logoSrc:
+                "images/reviews/New_York_Knicks_logosvg-photoaidcom-cropped.png",
+            quote: "Hometown kid put a masterpiece together! 🤯",
+        },
+        {
+            fullName: "Detroit Red Wings",
+            shortName: "@detroitredwings",
+            logoSrc:
+                "images/reviews/detroit-red-wings-logo-photoaidcom-cropped.png",
+            quote: "Well this is certainly the coolest thing you’ll see today. 🔥🔥🔥",
+        },
+        {
+            fullName: "FC Barcelona",
+            shortName: "@fcbarcelona",
+            logoSrc: "images/reviews/802_fcbarcelona.jpg",
+            quote: "😳 Insanely talented!\n💙❤️ Quin talent! | ¡Qué talento!\n🔝",
+        },
+        {
+            fullName: "US Open",
+            shortName: "@usopen",
+            logoSrc: "images/reviews/channels4_profile-photoaidcom-cropped.png",
+            quote: "The fun NEVER stops with The College Cuber! 🔥",
         },
     ];
+
+    let selectorCount = parseInt(Math.ceil(reviews.length / 2));
+    let selectorCountArray = Array.from(
+        { length: selectorCount },
+        (_, index) => index + 1,
+    );
+
+    console.log(selectorCountArray);
+
+    let activeSelector = 1;
+    $: activeReviews = reviews.slice(
+        (activeSelector - 1) * 2,
+        activeSelector * 2,
+    );
 </script>
 
 <div
@@ -72,14 +113,28 @@
                 }}
                 class="team-tweet-card"
             >
-                <ReviewItem review={reviews[0]}/>
-                <ReviewItem review={reviews[1]}/>
+                {#each activeReviews as activeReview (activeReview.shortName)}
+                    <div
+                    in:fly={{
+                        delay: 0,
+                        duration: 750,
+                        x: 150,
+                        opacity: 0.1,
+                        easing: linear,
+                    }}
+
+                    >
+                        <ReviewItem review={activeReview} />
+                    </div>
+                {/each}
             </div>
             <div class="center-image-container">
-                <CircularSelector selected={true} />
-                <CircularSelector />
-                <CircularSelector />
-                <CircularSelector />
+                {#each selectorCountArray as selector}
+                    <CircularSelector
+                        selected={selector === activeSelector}
+                        onClick={() => (activeSelector = selector)}
+                    />
+                {/each}
             </div>
         </div>
     {/if}
@@ -150,7 +205,7 @@
         display: flex;
         flex: 0 0 auto;
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
         justify-content: flex-start;
         width: 47.56%;
         padding-top: 19.5px;

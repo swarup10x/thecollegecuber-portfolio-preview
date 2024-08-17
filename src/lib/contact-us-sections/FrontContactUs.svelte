@@ -24,8 +24,6 @@
                class="artist-name-text-style vertical-spacing-divider inter-sans-artist red-text"
                >Dylan Sadiq</span
             ><span
-               class="artist-name-text-style vertical-spacing-divider inter-sans-artist"
-            ></span><span
                class="artist-name-text-style artist-name-text-style vertical-spacing-divider inter-sans-artist"
                ><br /></span
             ><span
@@ -120,9 +118,7 @@
    .black-text {
       color: black;
    }
-   .red-text {
-      color: #b71234;
-   }
+
    .artist-profile-container2 {
       box-sizing: border-box;
       display: flex;
@@ -177,7 +173,7 @@
    }
    .inter-sans-artist {
       font:
-         400 16px/22px Inter,
+         500 16px/22px Inter,
          sans-serif;
       text-align: left;
    }
@@ -245,6 +241,11 @@
       width: 40px;
       max-width: initial;
       height: 40px;
+   }
+
+   .red-text {
+      color: #b71234;
+      font-weight: 700;
    }
    
    @media screen and (max-width: 1180px) {

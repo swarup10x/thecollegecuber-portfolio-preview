@@ -22,9 +22,8 @@
 
     <div class="main-wrapper">
         <div class="canvas-wrapper">
-            <!-- <CubeCanvasAnimation /> -->
-            <!-- <SplineLegoAnimation/> -->
-             <SplineRubiksCubeAnimation/>
+
+             <!-- <SplineRubiksCubeAnimation/> -->
         </div>
         <div class="front-view-wrapper">
             <FrontView type="CUBE"/>

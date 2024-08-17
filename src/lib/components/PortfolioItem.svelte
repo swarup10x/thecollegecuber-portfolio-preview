@@ -1,26 +1,53 @@
 <script>
-    export let src
+  export let src;
+  let shouldShowDescription = false;
+
+  function handleEnter() {
+    shouldShowDescription = true;
+  }
+
+  function handleLeave() {
+    shouldShowDescription = false;
+  }
+
+  function handleTouchStart(event) {
+    // Prevent default to stop scrolling on touch devices
+    // event.preventDefault();
+    handleEnter();
+  }
+
+  function handleTouchEnd() {
+    handleLeave();
+  }
 </script>
 
-<a href="#" class="work-item-wrapper w-inline-block">
-    <div class="overflow-none full">
-        <img
-            src={src}
-            loading="eager"
-
-            
-            alt=""
-            class="work-item-image"
-        />
-        <div class="image-cover"></div>
-        <div class="card-hover">
-            <div class="track">
-                <marquee id={src} scrollamount="3" direction="up" class="works-description med-size">This is the description of the work of this portfolio item</marquee>
-
-            </div>
+<a
+  href="#"
+  class="work-item-wrapper w-inline-block"
+  on:mouseenter={handleEnter}
+  on:mouseleave={handleLeave}
+  on:touchstart={handleTouchStart}
+  on:touchend={handleLeave}
+  on:touchcancel={handleLeave}
+>
+  <div class="overflow-none full">
+    <img {src} loading="eager" alt="" class="work-item-image" />
+    <div class="image-cover"></div>
+    {#if shouldShowDescription}
+      <div class="card-hover">
+        <div class="track">
+          <marquee
+            id={src}
+            scrollamount="4"
+            direction="up"
+            class="works-description med-size"
+            >This is the description of the work of this portfolio item</marquee
+          >
         </div>
-    </div>
-    <div class="item-title">Kings College of Art</div>
+      </div>
+    {/if}
+  </div>
+  <div class="item-title">Kings College of Art</div>
 </a>
 
 <style>
@@ -29,10 +56,14 @@
     padding: 0;
     margin: 0;
     margin-top: 7px;
-    font: 400 18px Inter, sans-serif;
+    font:
+      400 18px Inter,
+      sans-serif;
     color: white;
+    width: 100%;
+    text-align: center;
   }
-  
+
   .work-item-wrapper {
     display: flex;
     flex-direction: column;
@@ -95,11 +126,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     transition: opacity 0.75s ease; /* Smooth transition for the opacity */
-    opacity: 0;
-  }
-
-  .work-item-wrapper:hover .card-hover {
-    opacity: 1; /* Show the hover content on hover */
+    opacity: 1;
   }
 
   .works-description {
@@ -107,7 +134,7 @@
     z-index: 90;
     /* margin-top: 1vh;
     margin-bottom: 1vh; */
-    font-size: 36px;
+    font-size: 32px;
     /* line-height: 1; */
     font-weight: 400;
     text-decoration: none;
@@ -116,8 +143,6 @@
     /* white-space: nowrap; */
     /* width: 200px; */
   }
-
- 
 
   .divider {
     display: flex;

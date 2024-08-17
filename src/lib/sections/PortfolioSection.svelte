@@ -33,6 +33,7 @@
             padding-left: 5%;
             -ms-grid-columns: 1fr;
             grid-template-columns: 1fr;
+            grid-gap: 1.25rem;
         }
     }
 </style>
