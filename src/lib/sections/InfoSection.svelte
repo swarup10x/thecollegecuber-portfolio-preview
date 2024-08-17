@@ -17,7 +17,7 @@
     .mosaic-artwork-description {
         box-sizing: border-box;
         flex: 0uto;
-        padding: 22px 40px 166px;
+        padding: 108px 40px 166px;
     }
     .sophisticated-text-styles {
         box-sizing: border-box;

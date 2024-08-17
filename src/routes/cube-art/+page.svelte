@@ -23,7 +23,7 @@
     <div class="main-wrapper">
         <div class="canvas-wrapper">
 
-             <!-- <SplineRubiksCubeAnimation/> -->
+             <SplineRubiksCubeAnimation/>
         </div>
         <div class="front-view-wrapper">
             <FrontView type="CUBE"/>

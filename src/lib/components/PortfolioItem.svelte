@@ -38,11 +38,14 @@
         <div class="track">
           <marquee
             id={src}
-            scrollamount="4"
+            scrollamount="5"
             direction="up"
             class="works-description med-size"
-            >This is the description of the work of this portfolio item</marquee
-          >
+            ><div class="top-title">Kings College of Art</div>
+            <div class="top-description"
+              >I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!</div
+            >
+          </marquee>
         </div>
       </div>
     {/if}
@@ -134,7 +137,7 @@
     z-index: 90;
     /* margin-top: 1vh;
     margin-bottom: 1vh; */
-    font-size: 32px;
+
     /* line-height: 1; */
     font-weight: 400;
     text-decoration: none;
@@ -142,6 +145,13 @@
     text-wrap: wrap;
     /* white-space: nowrap; */
     /* width: 200px; */
+  }
+  .top-description{
+    font-size: 18px;
+  }
+  .top-title{
+    font-size: 28px;
+    margin-bottom: 6px;
   }
 
   .divider {

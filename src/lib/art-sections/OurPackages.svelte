@@ -3,7 +3,7 @@
     <div class="div-style-3f4bbe8d">
       <div class="div-style-f77e6334">
         <p class="p-style-5f9e7af">Services</p>
-        <p class="p-style-c562f7c8">What we do</p>
+        <p class="p-style-c562f7c8">What I do</p>
       </div>
       <p class="p-style-741a4d3d">
         Experience the satisfaction of interactive art as we embark on a journey
@@ -163,7 +163,7 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 100%;
     margin-top: 16px;
   }
@@ -189,7 +189,8 @@
   .div-style-da0b6752 {
     box-sizing: border-box;
     flex: 0 0 auto;
-    width: 61.94%;
+    max-width: 61.94%;
+    min-width: 336px;
     padding-top: 42px;
     padding-right: 48px;
     padding-left: 196px;
@@ -219,6 +220,7 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
+    padding: 8px 12px;
   }
   .p-style-97a8ac3b {
     flex: 0 0 auto;
