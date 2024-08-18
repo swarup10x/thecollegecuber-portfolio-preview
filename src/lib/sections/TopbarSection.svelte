@@ -1,5 +1,6 @@
 <script>
     import FancyLogo from "../components/FancyLogo.svelte";
+    import TopNavItem from "../components/TopNavItem.svelte";
 </script>
 
 <div class="flex-container-with-text-content">
@@ -12,10 +13,14 @@
             
     </div>
     <div class="horizontal-menu-container">
-        <a href="/" class="unique-header-style">Portfolio</a>
-        <a href="/cube-art" class="unique-header-style">Cube Art</a>
+        <TopNavItem href="/" title="Portfolio"/>
+        <TopNavItem href="/cube-art" title="Cube Art"/>
+        <TopNavItem href="/lego-art" title="Lego Art"/>
+        <TopNavItem href="/contact-us" title="Contact Us"/>
+      
+        <!-- <a href="/cube-art" class="unique-header-style">Cube Art</a>
         <a href="/lego-art" class="unique-header-style">Lego Art</a>
-        <a href="/contact-us" class="unique-header-style">Contact Us</a>
+        <a href="/contact-us" class="unique-header-style">Contact Us</a> -->
     </div>
 </div>
 
@@ -65,6 +70,7 @@
             600 15px Inter,
             sans-serif;
         color: white;
+        padding: 4px;
     }
 
     @media screen and (max-width: 600px) {
@@ -78,7 +84,7 @@
 
         .horizontal-menu-container {
             width: 100%;
-            gap: 20px;
+            gap: 12px;
             justify-content: space-between;
         }
     }
