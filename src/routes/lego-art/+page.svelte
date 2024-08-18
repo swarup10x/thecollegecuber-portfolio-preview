@@ -35,7 +35,7 @@
         <FaqSection />
         <WorkInfo />
         <SlicedImages />
-        <PerfectForEventSection/>
+        <!-- <PerfectForEventSection/> -->
     </div>
 
     <div class="events-list">
