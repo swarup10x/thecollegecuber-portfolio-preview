@@ -32,6 +32,8 @@
         width: 100%;
         padding-top: 40px;
         padding-bottom: 40px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
     .central-heading {
         flex: 0 0 auto;

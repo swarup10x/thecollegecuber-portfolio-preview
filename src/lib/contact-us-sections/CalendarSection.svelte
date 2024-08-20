@@ -1,10 +1,13 @@
 <div class="artist-call-section2">
     <div class="artist-call-section">
-      <p class="artist-title-style">Meet The Artist</p>
-      <p class="artist-call-button">Book A Call</p>
+      <p class="artist-title-style">MEET THE ARTIST</p>
     </div>
-    <div class="box">
-        <iframe src="https://calendly.com/thecollegecuber/30min?embed_domain=thecollegecuber.com&amp;embed_type=Inline&amp;hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=d13425"  frameborder="0" title="Select a Date &amp; Time - Calendly"></iframe>
+    <div class="call-wrapper">
+
+       <p class="artist-call-button">Book A Call</p>
+       <div class="box">
+           <iframe src="https://calendly.com/thecollegecuber/30min?embed_domain=thecollegecuber.com&amp;embed_type=Inline&amp;hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=d13425"  frameborder="0" title="Select a Date &amp; Time - Calendly"></iframe>
+       </div>
     </div>
   </div>
 
@@ -12,17 +15,25 @@
    iframe{
       width:480px; height:560px
    }
+   .call-wrapper{
+      display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+   }
     .box{
         border: 1px solid #b71234;
         border-radius: 8px;
         padding: 8px;
+
     }
     .artist-call-section2 {
    box-sizing: border-box;
    display: flex;
    flex-direction: row;
    gap: 20px;
-   align-items: start;
+   align-items: center;
    justify-content: space-between;
    padding-right: 184px;
    padding-left: 184px;
@@ -40,7 +51,7 @@
    flex: 0 0 auto;
    padding: 0;
    margin: 0;
-   font: 500 22px Inter, sans-serif;
+   font: 700 28px Inter, sans-serif;
    color: black;
 }
 .artist-call-button {
@@ -48,7 +59,7 @@
    padding: 0;
    margin: 0;
    margin-top: 28px;
-   font: 700 32px Inter, sans-serif;
+   font: 700 26px Inter, sans-serif;
    color: #b71234;
 }
 .artist-call-section1 {
@@ -77,8 +88,12 @@
    }
 @media screen and (max-width: 560px) {
    iframe{
-      width:320px; height:480px
+      width:84vw; height:480px
    }
+   .artist-call-section2 {
+         padding-right: 12px;
+         padding-left: 12px;
+      }
    }
 
   </style>

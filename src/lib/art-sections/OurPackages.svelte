@@ -31,8 +31,7 @@
               <div class="div-style-ee63aa6 div-style-482a8635">
                 <ul class="ul-style-d4d2cf5d">
                   <li>
-                    Great way to make an announcement or celebrate a special
-                    occasion
+                    Great way to make an announcement or celebrate a special occasion
                   </li>
                 </ul>
               </div>
@@ -68,16 +67,14 @@
               <div class="div-style-20118822">
                 <ul class="ul-style-d4d2cf5d">
                   <li>
-                    One-of-a-kind piece of artwork is created throughout the
-                    duration of an event!
+                    One-of-a-kind piece of artwork is created throughout the duration of an event!
                   </li>
                 </ul>
               </div>
               <div class="div-style-20118822">
                 <ul class="ul-style-d4d2cf5d">
                   <li>
-                    Guests are asked to help put together the final piece of
-                    artwork
+                    Guests are asked to help put together the final piece of artwork
                   </li>
                 </ul>
               </div>

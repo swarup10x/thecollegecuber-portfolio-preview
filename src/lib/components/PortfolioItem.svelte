@@ -1,5 +1,5 @@
 <script>
-  export let src;
+  export let portfolio;
   let shouldShowDescription = false;
 
   function handleEnter() {
@@ -21,8 +21,7 @@
   }
 </script>
 
-<a
-  href="#"
+<div
   class="work-item-wrapper w-inline-block"
   on:mouseenter={handleEnter}
   on:mouseleave={handleLeave}
@@ -31,27 +30,25 @@
   on:touchcancel={handleLeave}
 >
   <div class="overflow-none full">
-    <img {src} loading="eager" alt="" class="work-item-image" />
+    <img src={portfolio.src} loading="eager" alt="" class="work-item-image" />
     <div class="image-cover"></div>
     {#if shouldShowDescription}
       <div class="card-hover">
         <div class="track">
           <marquee
-            id={src}
+            id={Date.now()}
             scrollamount="5"
             direction="up"
             class="works-description med-size"
-            ><div class="top-title">Kings College of Art</div>
-            <div class="top-description"
-              >I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!</div
-            >
+            ><div class="top-title">{portfolio.title}</div>
+            <div class="top-description">{portfolio.description}</div>
           </marquee>
         </div>
       </div>
     {/if}
   </div>
   <div class="item-title">Kings College of Art</div>
-</a>
+</div>
 
 <style>
   .item-title {
@@ -146,10 +143,10 @@
     /* white-space: nowrap; */
     /* width: 200px; */
   }
-  .top-description{
+  .top-description {
     font-size: 18px;
   }
-  .top-title{
+  .top-title {
     font-size: 28px;
     margin-bottom: 6px;
   }

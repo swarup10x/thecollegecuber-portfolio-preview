@@ -35,10 +35,10 @@
         <FaqSection />
         <WorkInfo />
         <SlicedImages />
-        <!-- <PerfectForEventSection/> -->
     </div>
-
+    
     <div class="events-list">
+        <PerfectForEventSection/>
     </div>
 
     <OurPackages />
@@ -49,6 +49,10 @@
 </div>
 
 <style>
+    .events-list{
+        margin-bottom: 140px;
+        margin-top: 60px;
+    }
     .main-wrapper {
         height: 100vh;
     }

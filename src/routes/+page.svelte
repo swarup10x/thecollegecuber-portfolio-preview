@@ -23,6 +23,8 @@
   </section>
   <section class="others">
     <PortfolioHeader />
+
+
     <PortfolioSection />
     <PortfolioHeader title="Info" />
     <InfoSection />
