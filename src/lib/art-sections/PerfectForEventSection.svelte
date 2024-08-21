@@ -1,7 +1,19 @@
 <script>
     import { onMount } from "svelte";
-    import { fly } from "svelte/transition";
-    import { quintOut } from "svelte/easing";
+    import { fly, scale } from "svelte/transition";
+    import {
+        quintOut,
+        linear,
+        cubicInOut,
+        circOut,
+        cubicOut,
+        cubicIn,
+        bounceIn,
+        bounceInOut,
+        sineInOut,
+        elasticInOut,
+    } from "svelte/easing";
+    import EventTextAnimation from "./EventTextAnimation.svelte";
 
     let eventImagesSrc = [
         "channels4_profile-photoaidcom-cropped-qmv69c10lawzf6ywzqmymdsm9rxnspddteci2m0wyw.png",
@@ -23,11 +35,6 @@
     function handleMouseMove(e) {
         const containerRect = scrollContainer.getBoundingClientRect();
         const mouseX = e.clientX - containerRect.left;
-        const containerWidth = containerRect.width;
-
-        const scrollSpeed = 10; // Adjust scroll speed as needed
-        const threshold = 50; // Pixels from the edge to start scrolling
-        console.log(mouseX, containerWidth, threshold);
 
         if (lastMouseX) {
             if (mouseX > lastMouseX) {
@@ -60,17 +67,22 @@
         "Any Event!",
     ];
 
-    let currentIndex = 1;
-    let currentEvent = eventNames[currentIndex];
+    var currentIndex = 0;
+    var currentEvent = eventNames[currentIndex];
+    var uniqueKey = crypto.randomUUID();
 
     function updateEvent() {
+        console.log("updating event");
+
+        currentIndex++;
+        if (currentIndex >= eventNames.length) currentIndex = 0;
         currentEvent = eventNames[currentIndex];
-        console.log(currentEvent); // For testing purposes
-        currentIndex = (currentIndex + 1) % eventNames.length;
+        console.log("currentEvent", currentEvent, currentIndex);
+        uniqueKey = crypto.randomUUID();
     }
 
     onMount(() => {
-        setInterval(updateEvent, 2000);
+        setInterval(updateEvent, 3000);
     });
 </script>
 
@@ -79,18 +91,36 @@
         <div class="event-description-container">
             <div class="event-card">
                 <p class="event-title-text-style">Perfect for<br /></p>
-                <p
-                    transition:fly={{
-                        delay: 200,
-                        duration: 500,
-                        x: 400,
-                        easing: quintOut,
-                    }}
-                    class="event-title-text-style1"
-                    key={currentEvent}
-                >
-                    {currentEvent}
-                </p>
+                <!-- <EventTextAnimation /> -->
+                <div class="animated-text-wrapper">
+                    {#key uniqueKey}
+                        <p
+                            in:fly={{
+                                delay: 200,
+                                duration: 700,
+
+                                // start: 0.7,
+                                y:40,
+                                opacity: 0,
+
+                                easing: elasticInOut,
+                            }}
+                            out:fly={{
+                                delay: 0,
+                                duration: 400,
+
+                                // start: 0.4,
+                                y:-25,
+                                opacity: 0,
+
+                                easing: cubicOut,
+                            }}
+                            class="event-title-text-style1"
+                        >
+                            {currentEvent}
+                        </p>
+                    {/key}
+                </div>
             </div>
         </div>
         <div class="vertical-image-gallery">
@@ -114,6 +144,12 @@
 </div>
 
 <style>
+    .animated-text-wrapper {
+        height: 50px;
+        display: grid;
+        place-items: center;
+        margin: 30px 0;
+    }
     .event-card-container {
         box-sizing: border-box;
         display: flex;
@@ -157,12 +193,11 @@
         text-align: left;
     }
     .event-title-text-style1 {
-        flex: 0 0 auto;
         padding: 0;
         margin: 0;
-        margin-top: 26px;
+
         font:
-            600 36px/22px Inter,
+            600 36px Inter,
             sans-serif;
         color: #b71234;
     }
@@ -172,7 +207,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        margin-top: 92px;
+        margin-top: 20px;
     }
     .horizontal-image-gallery {
         box-sizing: border-box;

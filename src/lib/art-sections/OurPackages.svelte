@@ -1,3 +1,41 @@
+<script>
+  let cubeServices = [
+    {
+      type: "Social Media Collaboration",
+      title:"A video of a custom brick mosaic",
+      bulletPoints: [
+        "Best suited for logos and images with light details.",
+        "Great way to make an announcement or celebrate a special occasion",
+        "Great way to reach a larger audience on social media!",
+        "Quick turnaround time!"
+      ],
+    },
+    {
+      type: "Live Art Performance",
+      title:"A unique, interactive art experience",
+      bulletPoints: [
+        "One-of-a-kind piece of artwork is created throughout the duration of an event!",
+        "Guests are asked to help put together the final piece of artwork",
+        "Encouraging participation and creativity!",
+        "FREE Social Media Collaboration"
+      ],
+    },
+    {
+      type: "Commissioned Artwork",
+      title:"A custom, framed piece",
+      bulletPoints: [
+        "1 of 1 piece of artwork created by Dylan Sadiq",
+        "Different details options are available.",
+        "Different sizes options are available.",
+        "FREE Social Media Collaboration",
+        "FREE Live Art Performance"
+      ],
+    }
+  ];
+
+  let offeredServices=cubeServices
+</script>
+
 <div class="div-style-a36f431">
   <div class="div-style-c76d0442">
     <div class="div-style-3f4bbe8d">
@@ -14,112 +52,33 @@
     </div>
     <div class="div-style-da0b6752">
       <!-- Repeated elements detected. These are rendered using loops & conditions in the React tab -->
-      <div class="div-style-4facab78 div-style-6761ebad">
-        <div class="div-style-bda1af86">
-          <p class="p-style-97a8ac3b">Social Media Collaboration</p>
-          <div class="div-style-e8bdc7ee">
-            <div class="div-style-f85a8a66">
-              <p class="p-style-1ab7de87">A video of a custom brick mosaic</p>
-            </div>
-            <div class="div-style-19c67a0c">
-              <!-- Repeated elements detected. These are rendered using loops & conditions in the React tab -->
+       {#each offeredServices as service}
+        
+       <div class="div-style-4facab78 div-style-6761ebad">
+         <div class="div-style-bda1af86">
+           <p class="p-style-97a8ac3b">{service.type}</p>
+           <div class="div-style-e8bdc7ee">
+             <div class="div-style-f85a8a66">
+               <p class="p-style-1ab7de87">{service.title}</p>
+             </div>
+             <div class="div-style-19c67a0c">
+              {#each service.bulletPoints as point}
               <div class="div-style-ee63aa6 div-style-482a8635">
                 <ul class="ul-style-d4d2cf5d">
-                  <li>Best suited for logos and images with light details.</li>
+                  <li>{point}</li>
                 </ul>
               </div>
-              <div class="div-style-ee63aa6 div-style-482a8635">
-                <ul class="ul-style-d4d2cf5d">
-                  <li>
-                    Great way to make an announcement or celebrate a special occasion
-                  </li>
-                </ul>
-              </div>
-              <div class="div-style-ee63aa6 div-style-482a8635">
-                <ul class="ul-style-d4d2cf5d">
-                  <li>Great way to reach a larger audience on social media!</li>
-                </ul>
-              </div>
-              <div class="div-style-ee63aa6 div-style-482a8635">
-                <ul class="ul-style-d4d2cf5d">
-                  <li>Quick turnaround time!</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="p-style-1493270f">Contact Us</p>
-      </div>
-      <div class="div-style-4facab78 div-style-6761ebad">
-        <div class="div-style-bda1af86">
-          <p class="p-style-97a8ac3b">Live Art Performance</p>
-          <div class="div-style-e8bdc7ee">
-            <div class="div-style-f85a8a66">
-              <p class="p-style-1ab7de87">
-                A unique, interactive art experience
-              </p>
-            </div>
-            <div
-              class="div-style-19c67a0c"
-              style="display: flex; justify-content: flex-start; align-items: center; flex-direction: column; gap: 10px"
-            >
-              <!-- Repeated elements detected. These are rendered using loops & conditions in the React tab -->
-              <div class="div-style-20118822">
-                <ul class="ul-style-d4d2cf5d">
-                  <li>
-                    One-of-a-kind piece of artwork is created throughout the duration of an event!
-                  </li>
-                </ul>
-              </div>
-              <div class="div-style-20118822">
-                <ul class="ul-style-d4d2cf5d">
-                  <li>
-                    Guests are asked to help put together the final piece of artwork
-                  </li>
-                </ul>
-              </div>
-              <div class="div-style-20118822">
-                <ul class="ul-style-d4d2cf5d">
-                  <li>Encouraging participation and creativity!</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="p-style-1493270f">Contact Us</p>
-      </div>
-      <div class="div-style-4facab78 div-style-6761ebad">
-        <div class="div-style-bda1af86">
-          <p class="p-style-97a8ac3b">Commissioned Artwork</p>
-          <div class="div-style-e8bdc7ee">
-            <!-- Button Component is detected here -->
-            <button class="button-style-9d399e3b">A custom, framed piece</button
-            >
-            <div
-              class="div-style-19c67a0c"
-              style="display: flex; justify-content: flex-start; align-items: center; flex-direction: column; gap: 10px"
-            >
-              <!-- Repeated elements detected. These are rendered using loops & conditions in the React tab -->
-              <div class="div-style-20118822">
-                <ul class="ul-style-d4d2cf5d">
-                  <li>1 of 1 piece of artwork created by Dylan Sadiq</li>
-                </ul>
-              </div>
-              <div class="div-style-20118822">
-                <ul class="ul-style-d4d2cf5d">
-                  <li>Different details options are available.</li>
-                </ul>
-              </div>
-              <div class="div-style-20118822">
-                <ul class="ul-style-d4d2cf5d">
-                  <li>Different sizes options are available.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="p-style-1493270f">Contact Us</p>
-      </div>
+              {/each}
+              
+               
+             </div>
+           </div>
+         </div>
+         <a href="/contact-us" class="p-style-1493270f">Contact Us</a>
+       </div>
+       {/each}
+      
+      
     </div>
   </div>
 </div>
@@ -142,9 +101,9 @@
     padding: 0;
     margin: 0;
     font:
-      500 14px Inter,
+      500 16px Inter,
       sans-serif;
-    color: #2b2b2b;
+    color: #B71234;
   }
   .p-style-c562f7c8 {
     padding: 0;
@@ -202,7 +161,7 @@
     max-width: 372px;
     padding-top: 42px;
     padding-bottom: 54px;
-    border: 1px solid #afc7cc;
+    border: 1px solid #b42340;
     border-radius: 24px;
   }
   .div-style-6761ebad {
@@ -249,7 +208,7 @@
     height: 39px;
     padding-right: 9px;
     padding-left: 9px;
-    background: #4b4b4b;
+    background: #B71234;
     border-radius: 5px;
   }
   .p-style-1ab7de87 {
@@ -285,7 +244,6 @@
   .div-style-482a8635 {
     box-sizing: border-box;
     width: 100%;
-    margin-top: 10px;
   }
   .div-style-ee63aa6:first-child {
     margin-top: 0px;
@@ -296,6 +254,8 @@
     list-style: disc;
   }
   .p-style-1493270f {
+    all:unset;
+    cursor: pointer;
     flex: 0 0 auto;
     padding: 0;
     padding-right: 31px;
@@ -305,7 +265,7 @@
     font:
       500 18px Inter,
       sans-serif;
-    color: #565454;
+    color: #B71234;
     text-decoration-line: underline;
     white-space: pre-wrap;
   }
@@ -375,8 +335,7 @@
     }
     .div-style-da0b6752 {
       width: auto;
-      padding-left: 0;
-      padding-right: 0;
+      padding: 0 2px;
     }
     .div-style-3f4bbe8d {
       width: auto;
@@ -395,5 +354,14 @@
       padding-left: 12px;
       padding-right: 12px;
     }
+    .p-style-c562f7c8 {
+      font-size: 32px;
+    }
+    .p-style-5f9e7af {
+      font-size: 14px;
+  }
+  .div-style-4facab78 {
+    width: 332px;
+  }
   }
 </style>

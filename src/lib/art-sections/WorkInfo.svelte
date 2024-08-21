@@ -8,30 +8,42 @@
          of cubes
       </p>
       <div class="div-style-350cca7a">
-         <img
-            src="/art-page-images/image_41c4746e.png"
-            class="img-style-7e80d45"
-         />
-         <img
-            src="/art-page-images/image_2e596716.png"
-            class="img-style-7e80d45"
-         />
-         <img
-            src="/art-page-images/image_2703b701.png"
-            class="img-style-7e80d45"
-         />
-         <img
-            src="/art-page-images/image_7896fe92.png"
-            class="img-style-2aac90a5"
-         />
-         <img
-            src="/art-page-images/image_7a770a75.png"
-            class="img-style-771a746"
-         />
-         <img
-            src="/art-page-images/image_ff0deeba.png"
-            class="img-style-38242fd5"
-         />
+         <a href="https://twitter.com/thecollegecuber?lang=en">
+            <img
+               src="/art-page-images/image_41c4746e.png"
+               class="img-style-7e80d45"
+            />
+         </a>
+         <a href="https://www.facebook.com/thecollegecuber/">
+            <img
+               src="/art-page-images/image_2e596716.png"
+               class="img-style-7e80d45"
+            />
+         </a>
+         <a href="https://www.linkedin.com/in/dylan-sadiq-34a25b19b">
+            <img
+               src="/art-page-images/image_2703b701.png"
+               class="img-style-7e80d45"
+            /></a
+         >
+         <a href="https://www.instagram.com/thecollegecuber_/">
+            <img
+               src="/art-page-images/image_7896fe92.png"
+               class="img-style-2aac90a5"
+            />
+         </a>
+         <a href="https://www.youtube.com/@thecollegecuber">
+            <img
+               src="/art-page-images/image_7a770a75.png"
+               class="img-style-771a746"
+            />
+         </a>
+         <a href="https://www.linkedin.com/in/dylan-sadiq-34a25b19b">
+            <img
+               src="/art-page-images/image_ff0deeba.png"
+               class="img-style-38242fd5"
+            />
+         </a>
       </div>
    </div>
 </div>
@@ -124,26 +136,21 @@
          max-width: 400px;
       }
 
-      .div-style-fb67555a{
+      .div-style-fb67555a {
          max-width: 400px;
       }
 
-      .div-style-63bd3093{
+      .div-style-63bd3093 {
          flex-direction: column;
       }
    }
    @media screen and (max-width: 480px) {
-
-
-      .div-style-fb67555a{
+      .div-style-fb67555a {
          max-width: 336px;
       }
 
       .p-style-d34024ef {
-
          max-width: 336px;
       }
-
-
    }
 </style>

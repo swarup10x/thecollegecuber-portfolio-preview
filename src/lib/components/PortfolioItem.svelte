@@ -37,7 +37,8 @@
         <div class="track">
           <marquee
             id={Date.now()}
-            scrollamount="5"
+            scrollamount="7"
+            scrolldelay="160"
             direction="up"
             class="works-description med-size"
             ><div class="top-title">{portfolio.title}</div>
@@ -51,6 +52,13 @@
 </div>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap");
+  
+  marquee {
+    font-family: "REM", sans-serif;
+    font-optical-sizing: auto;
+    padding: 8px;
+  }
   .item-title {
     flex: 0 0 auto;
     padding: 0;
@@ -132,16 +140,12 @@
   .works-description {
     position: relative;
     z-index: 90;
-    /* margin-top: 1vh;
-    margin-bottom: 1vh; */
 
-    /* line-height: 1; */
     font-weight: 400;
     text-decoration: none;
     text-transform: uppercase;
     text-wrap: wrap;
-    /* white-space: nowrap; */
-    /* width: 200px; */
+
   }
   .top-description {
     font-size: 18px;

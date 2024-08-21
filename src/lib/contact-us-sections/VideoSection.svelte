@@ -21,7 +21,7 @@
         width: 100%;
         background: black;
         border-radius: 24px 24px 0px 0px;
-        margin-top: 100px;
+        margin-top: 148px;
     }
     .featured-content-container {
         box-sizing: border-box;
@@ -40,8 +40,9 @@
         padding: 0;
         margin: 0;
         font:
-            600 24px Inter,
+            500 22px Inter,
             sans-serif;
+            opacity: 75%;
         color: white;
         text-align: center;
     }
@@ -54,7 +55,7 @@
 
     @media screen and (max-width: 560px) {
         .central-heading {
-            font-size: 18px;
+            font-size: 16px;
         }
         .featured-content-container{
             padding-top: 32px;

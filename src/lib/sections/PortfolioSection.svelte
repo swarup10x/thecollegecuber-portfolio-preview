@@ -106,7 +106,8 @@
     .button-wrapper {
         display: grid;
         place-items: center;
-        padding: 36px;
+        /* padding: 36px; */
+        padding-top: 72px;
     }
     .button-load-more {
         appearance: button;

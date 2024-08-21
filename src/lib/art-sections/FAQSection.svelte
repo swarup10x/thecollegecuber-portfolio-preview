@@ -139,9 +139,9 @@
         flex: 0 1 378px;
         flex-direction: column;
         align-items: stretch;
-        justify-content: center;
+        justify-content: start;
 
-        padding: 59px 32px 89px;
+        padding: 60px 32px 32px 32px;
         background: #f9f9f9;
         border: 1px solid #939393;
     }
@@ -188,9 +188,9 @@
         flex: 0 0 auto;
         flex-direction: column;
         align-items: stretch;
-        justify-content: center;
+        justify-content: start;
 
-        padding: 59px 32px 89px;
+        padding: 60px 32px 32px 32px;
         background: #f9f9f9;
     }
 
@@ -200,9 +200,9 @@
         flex: 0 0 auto;
         flex-direction: column;
         align-items: stretch;
-        justify-content: center;
+        justify-content: start;
 
-        padding: 59px 32px 89px;
+        padding: 60px 32px 32px 32px;
         background: #f9f9f9;
         border: 1px solid #939393;
     }

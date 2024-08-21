@@ -1,7 +1,7 @@
 <div class="intense-artwork-container">
     <p class="intense-content-block">
       My creative process always starts with deciding what I want to create. Fortunately, my social media community is always providing me with new and exciting ideas for my artwork. However, for
-      the most part, I love creating headshots of professional athletes, especially because I&apos;m a big sports fan. Headshots are more challenging and impressive, which allows me to enjoy my work
+      the most part, I love creating headshots of professional athletes, especially because I'm a big sports fan. Headshots are more challenging and impressive, which allows me to enjoy my work
       even more.
       <br />
       <br />
