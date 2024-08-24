@@ -97,5 +97,11 @@
       text-align: center;
       margin-bottom: 1em;
     }
+
+    button{
+      width: 100%;
+      padding: 6px 0;
+      margin-top: 8px;
+    }
   </style>
   
