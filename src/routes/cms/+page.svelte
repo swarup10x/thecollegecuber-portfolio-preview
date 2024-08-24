@@ -17,7 +17,7 @@
   
     // Function to handle form submission
     const handleLogin = async () => {
-        var url=`https://thecollegecuber.devconsort.com:3099//api/auth?userName=${userName}&password=${password}`
+        var url=`https://thecollegecuber.devconsort.com:3099/api/auth?userName=${userName}&password=${password}`
       const response = await fetch( url);
   
       const data = await response.json();

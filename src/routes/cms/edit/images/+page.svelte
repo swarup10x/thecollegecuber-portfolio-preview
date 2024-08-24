@@ -6,7 +6,7 @@
     let serverUrl="https://thecollegecuber.devconsort.com:3099/"
     async function loadImages() {
         try {
-            const response = await fetch("https://thecollegecuber.devconsort.com:3099//api/images");
+            const response = await fetch("https://thecollegecuber.devconsort.com:3099/api/images");
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -32,7 +32,7 @@
         let imgName=splits[splits.length-1]
         console.log('imgName',imgName)
         try {
-            const response = await fetch("https://thecollegecuber.devconsort.com:3099//api/images/delete?image="+imgName);
+            const response = await fetch("https://thecollegecuber.devconsort.com:3099/api/images/delete?image="+imgName);
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

@@ -35,7 +35,7 @@
 
         try {
             uploadStatus = "Uploading...";
-            const response = await fetch("https://thecollegecuber.devconsort.com:3099//api/images", {
+            const response = await fetch("https://thecollegecuber.devconsort.com:3099/api/images", {
                 method: "POST",
                 body: formData,
                 onUploadProgress: (progressEvent) => {
