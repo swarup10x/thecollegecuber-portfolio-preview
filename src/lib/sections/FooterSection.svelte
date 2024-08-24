@@ -4,12 +4,13 @@
 
     import QuickLinks from "../components/QuickLinks.svelte";
 
+    export let data
 </script>
 <div class="cube-art-world">
     <div class="cube-art-description-block">
       <img src="images/image_8b4378be.png" class="cube-art-image" />
       <p class="creative-engineering-text-style">
-        <span>Welcome to my world of cube art, where engineering and creativity unite</span>
+        <span>{data.page.others.footerHeader}</span>
       </p>
     </div>
     <div class="cube-art-section-title-block">

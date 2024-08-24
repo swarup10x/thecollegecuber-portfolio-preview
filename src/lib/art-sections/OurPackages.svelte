@@ -1,39 +1,8 @@
 <script>
-  let cubeServices = [
-    {
-      type: "Social Media Collaboration",
-      title:"A video of a custom brick mosaic",
-      bulletPoints: [
-        "Best suited for logos and images with light details.",
-        "Great way to make an announcement or celebrate a special occasion",
-        "Great way to reach a larger audience on social media!",
-        "Quick turnaround time!"
-      ],
-    },
-    {
-      type: "Live Art Performance",
-      title:"A unique, interactive art experience",
-      bulletPoints: [
-        "One-of-a-kind piece of artwork is created throughout the duration of an event!",
-        "Guests are asked to help put together the final piece of artwork",
-        "Encouraging participation and creativity!",
-        "FREE Social Media Collaboration"
-      ],
-    },
-    {
-      type: "Commissioned Artwork",
-      title:"A custom, framed piece",
-      bulletPoints: [
-        "1 of 1 piece of artwork created by Dylan Sadiq",
-        "Different details options are available.",
-        "Different sizes options are available.",
-        "FREE Social Media Collaboration",
-        "FREE Live Art Performance"
-      ],
-    }
-  ];
 
-  let offeredServices=cubeServices
+
+  export let services
+  export let whatIDO
 </script>
 
 <div class="div-style-a36f431">
@@ -44,15 +13,12 @@
         <p class="p-style-c562f7c8">What I do</p>
       </div>
       <p class="p-style-741a4d3d">
-        Experience the satisfaction of interactive art as we embark on a journey
-        together, transforming cubes into mesmerizing masterpieces. Join me in
-        celebrating the fusion of artistry and engineering, unlocking the hidden
-        beauty within each twist and turn
+        {whatIDO}
       </p>
     </div>
     <div class="div-style-da0b6752">
       <!-- Repeated elements detected. These are rendered using loops & conditions in the React tab -->
-       {#each offeredServices as service}
+       {#each services as service}
         
        <div class="div-style-4facab78 div-style-6761ebad">
          <div class="div-style-bda1af86">

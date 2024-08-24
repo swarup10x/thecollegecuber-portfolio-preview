@@ -1,12 +1,50 @@
-"channels4_profile-photoaidcom-cropped-qmv69c10lawzf6ywzqmymdsm9rxnspddteci2m0wyw.png",
-"download-1-photoaidcom-cropped-qmv6yx6umxxzh1svkstchxccfdtdc2yc01ocds33l4.png",
-"download-2-photoaidcom-cropped-qmv71k4jt7jy1nyz6funzrdwfatfxif813kduq6c4o.png",
-"download-3-photoaidcom-cropped-qmv6yy4otrz9snrifb7z2f3t0roqjs22c6btv21pew.png",
-"download-4-photoaidcom-cropped-qmv7086s4nqbljwlyd4oylhe4ndq0y4wuiamdm5ey0.png",
-"download-photoaidcom-cropped-qmv6omufu7v0eoqtncqc7isqdkir3c4394n1arc7oo.png",
-"jbPuTCHf_400x400-photoaidcom-cropped-qmv6onsa11waqapghv4ys0k6yye4b17tl9ais1atig.png",
-"mlb-world-baseball-classic-favicon-photoaidcom-cropped-qmv6onsa11waqapghv4ys0k6yye4b17tl9ais1atig.png",
-"premierleague-1024x1024-photoaidcom-cropped-qmv6opnyepyvdimq6vy7x0345q4uqffa9ilhql8160.png",
-"Screenshot_2024-04-17_at_73628_PM-removebg-preview-photoaidcom-cropped-qmv6otfb6240nyh9kxkq6z4yj9mbl7u7m17fnp2gh4.png",
-"Screenshot_2024-04-17_at_73652_PM-removebg-preview-photoaidcom-cropped-qmv6oud5cw5azkfwffzcrgwf4nhoswxxy5ux4z12aw.png",
-"square-photoaidcom-cropped-qmv6orjmse1g0qjzvwrh1zm1chvl5tmqxrwgp558tk.png"
+let pageData = {
+......
+.....
+
+    portfolios:[
+        {
+            title: "Kings College of Art",
+            description:
+                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
+            src: "images/Rectangle-15.jpg",
+        },
+        {
+            title: "Kings College of Art",
+            description:
+                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
+            src: "images/Rectangle-15-1.jpg",
+        },
+        {
+            title: "Kings College of Art",
+            description:
+                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
+            src: "images/Rectangle-15-2.jpg",
+        },
+        {
+            title: "Kings College of Art",
+            description:
+                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
+            src: "images/Rectangle-15-3.jpg",
+        },
+        {
+            title: "Kings College of Art",
+            description:
+                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
+            src: "images/Rectangle-15-1.jpg",
+        },
+        {
+            title: "Kings College of Art",
+            description:
+                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
+            src: "images/Rectangle-15-2.jpg",
+        },
+        {
+            title: "Kings College of Art",
+            description:
+                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
+            src: "images/Rectangle-15-3.jpg",
+        },
+    ],
+
+}

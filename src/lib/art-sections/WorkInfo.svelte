@@ -1,11 +1,15 @@
+<script>
+   export let title
+   export let description
+</script>
+
 <div class="div-style-63bd3093">
    <p class="p-style-d34024ef">
-      Beautiful artwork that brings smile to you everytime
+      {title}
    </p>
    <div class="div-style-fb67555a">
       <p class="p-style-847381b1">
-         Watch how a talented artist creates stunning artwork out of thousands
-         of cubes
+         {description}
       </p>
       <div class="div-style-350cca7a">
          <a href="https://twitter.com/thecollegecuber?lang=en">

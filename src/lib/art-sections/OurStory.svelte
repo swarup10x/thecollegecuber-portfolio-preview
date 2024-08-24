@@ -1,3 +1,8 @@
+<script>
+     export let story
+     export let ourStoryImage
+</script>
+
 <div class="div-style-8697dd27">
    <div class="div-style-a14762a7">
       <div class="div-style-f77e6334">
@@ -5,18 +10,12 @@
          <p class="p-style-774b7cbf">Our story</p>
       </div>
       <p class="p-style-b321f26f">
-         Meet Dylan Sadiq, a talented artist who creates stunning artwork out of
-         hundreds or thousands of cubes. As a Biomedical Engineering graduate
-         from Rutgers University, Dylan uses his engineering knowledge to create
-         intricate designs that are not only aesthetically pleasing but also a
-         testament to his skills as an engineer. His passion for sports is
-         reflected in his work, as he loves creating headshots of professional
-         athletes, a task that he finds challenging and rewarding!
+         {story}
       </p>
       <!-- Button Component is detected here -->
       <button class="button-style-bdd38397">Read more</button>
    </div>
-   <img src="/art-page-images/image_c5f8b2d8.png" class="img-style-7a1ad65e" />
+   <img src={ourStoryImage} class="img-style-7a1ad65e" />
 </div>
 
 <style>

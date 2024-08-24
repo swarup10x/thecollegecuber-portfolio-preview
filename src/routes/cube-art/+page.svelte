@@ -17,34 +17,12 @@
     let howItWorks =
         "My main aim as an artist is to create a super interactive and enjoyable art experience for everyone present. When guests arrive, they will be greeted with a piece of art that’s still being made. Their job is to help add the next cubes to the artwork. Once they do it successfully, they become official artists. All artists need to sign their artwork, so I collect signatures from all my new artists on the frame of the artwork. By the end of the event, I’ve made hundreds of new friends that helped me create a one-of-a-kind piece of art!";
     let artType = "Cube";
+
+    export let data;
+    console.log(data)
 </script>
 
-<!-- <div class="wrapper">
-    <TopbarSection />
 
-    <div class="main-wrapper">
-        <div class="canvas-wrapper">
-            <SplineRubiksCubeAnimation />
-        </div>
-        <div class="front-view-wrapper">
-            <FrontView type="CUBE" />
-        </div>
-    </div>
-
-    <HowItWorks {videoSrc} {howItWorks} {artType} />
-
-    <div class="mid-section">
-        <FaqSection />
-        <WorkInfo />
-        <SlicedImages />
-    </div>
-
-    <OurPackages />
-
-    <OurStory />
-
-    <FooterSection />
-</div> -->
 <div class="wrapper">
     <TopbarSection />
 
@@ -54,27 +32,28 @@
             <SplineRubiksCubeAnimation />
         </div>
         <div class="front-view-wrapper">
-            <FrontView type="CUBE" />
+            <FrontView landingText={data.page.cubeArt.landingText}/>
         </div>
     </div>
 
-    <HowItWorks {videoSrc} {howItWorks} {artType} />
+     <HowItWorks videoSrc={data.page.cubeArt.videoSrc} howItWorks={data.page.cubeArt.howItWorks} {artType}/>
+
 
     <div class="mid-section">
-        <FaqSection />
-        <WorkInfo />
-        <SlicedImages />
+        <FaqSection faqs={data.page.cubeArt.faqs}/>
+        <WorkInfo title={data.page.cubeArt.workInfoTitle} description={data.page.cubeArt.workInfoDescription}/>
+        <SlicedImages gridImageSrc={data.page.cubeArt.gridImageSrc}/>
     </div>
 
     <div class="events-list">
         <PerfectForEventSection />
     </div>
 
-    <OurPackages />
+    <OurPackages whatIDO={data.page.cubeArt.whatIDO} services={data.page.cubeArt.services}/>
 
-    <OurStory />
+    <OurStory ourStoryImage={data.page.cubeArt.ourStoryImage} story={data.page.cubeArt.ourStory}/>
 
-    <FooterSection />
+    <FooterSection {data}/>
 </div>
 
 <style>

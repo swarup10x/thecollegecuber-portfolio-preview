@@ -3,51 +3,8 @@
     import { quintOut, linear } from "svelte/easing";
     import PortfolioItem from "../components/PortfolioItem.svelte";
 
-    let allPortfolios = [
-        {
-            title: "Kings College of Art",
-            description:
-                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
-            src: "images/Rectangle-15.jpg",
-        },
-        {
-            title: "Kings College of Art",
-            description:
-                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
-            src: "images/Rectangle-15-1.jpg",
-        },
-        {
-            title: "Kings College of Art",
-            description:
-                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
-            src: "images/Rectangle-15-2.jpg",
-        },
-        {
-            title: "Kings College of Art",
-            description:
-                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
-            src: "images/Rectangle-15-3.jpg",
-        },
-        {
-            title: "Kings College of Art",
-            description:
-                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
-            src: "images/Rectangle-15-1.jpg",
-        },
-        {
-            title: "Kings College of Art",
-            description:
-                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
-            src: "images/Rectangle-15-2.jpg",
-        },
-        {
-            title: "Kings College of Art",
-            description:
-                "I feel incredibly fortunate to have had the opportunity to collaborate with Bleacher Report on Kobe Day, where we honored and celebrated the extraordinary life and career of Kobe Bryant in Los Angeles, CA!",
-            src: "images/Rectangle-15-3.jpg",
-        },
-        // Add more items if needed...
-    ];
+    export let data ;
+     let allPortfolios=data.page.portfolios ;
 
     let pagination = 1;
     let canLoadMore = true;

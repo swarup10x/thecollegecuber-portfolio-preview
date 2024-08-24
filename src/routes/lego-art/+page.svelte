@@ -11,9 +11,11 @@
     import SplineLegoAnimation from "../../lib/animations-3d/SplineLegoAnimation.svelte";
     import PerfectForEventSection from "../../lib/art-sections/PerfectForEventSection.svelte";
 
-    let videoSrc="https://thecollegecuber.com/wp-content/uploads/2024/05/US-Open-LEGO.mp4"
-    let howItWorks="My ultimate goal as an artist is to craft an insanely interactive and thrilling journey for everyone involved. As soon as guests step in, they'll be met with the mesmerizing sight of an art piece in progress. Each attendee will be handed their very own unique design card and tasked with bringing it to life on their baseplate, using any colors they need! Once they've nailed it, they get to proudly add their creation to the evolving masterpiece! And guess what? They're not just participants, they're official artists, complete with the honor of signing the art frame! By the end of the event, we'll have bonded, laughed, and collaborated to create something truly extraordinary. Hundreds of new friendships formed, all in the name of art! Let's make memories and masterpieces together!"
+   
     let artType="Brick"
+
+    export let data;
+    console.log(data)
 </script>
 
 <div class="wrapper">
@@ -25,27 +27,27 @@
              <SplineLegoAnimation/>
         </div>
         <div class="front-view-wrapper">
-            <FrontView type="LEGO"/>
+            <FrontView landingText={data.page.legoArt.landingText}/>
         </div>
     </div>
 
-    <HowItWorks {videoSrc} {howItWorks} {artType}/>
+    <HowItWorks videoSrc={data.page.legoArt.videoSrc} howItWorks={data.page.legoArt.howItWorks} {artType}/>
 
     <div class="mid-section">
-        <FaqSection />
-        <WorkInfo />
-        <SlicedImages />
+        <FaqSection faqs={data.page.legoArt.faqs}/>
+        <WorkInfo title={data.page.legoArt.workInfoTitle} description={data.page.legoArt.workInfoDescription}/>
+        <SlicedImages gridImageSrc={data.page.legoArt.gridImageSrc}/>
     </div>
     
     <div class="events-list">
         <PerfectForEventSection/>
     </div>
 
-    <OurPackages />
+    <OurPackages whatIDO={data.page.legoArt.whatIDO} services={data.page.legoArt.services}/>
 
-    <OurStory />
+    <OurStory ourStoryImage={data.page.legoArt.ourStoryImage} story={data.page.legoArt.ourStory}/>
 
-    <FooterSection />
+    <FooterSection {data}/>
 </div>
 
 <style>

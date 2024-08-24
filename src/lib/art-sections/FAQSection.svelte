@@ -1,26 +1,5 @@
 <script>
-    export let faqs = [
-        {
-            q: "How long does it take?",
-            a: "Just under 3 hours, from the placement of the first cube to the final one. However, Thanks to my careful preparations, I can effectively complete my live performance in under 1 hour, while still delivering exceptional artistic quality.",
-        },
-        {
-            q: "Do you ONLY work in sports?",
-            a: "Not at all! If you are organizing an event of any scale, I offer a distinctive and captivating live entertainment experience that is certain to make a lasting impression. From weddings and bar mitzvahs to corporate events, college functions, charitable gatherings, and a wide range of occasions",
-        },
-        {
-            q: "Do you ONLY create headshots?",
-            a: "I find headshots to be particularly difficult and, as a result, the most captivating. The intricate designs and attention to detail make them stand out in my portfolio. However, I am open and capable of creating logos, mascots, or any customized artwork that aligns with the unique requirements of each occasion.",
-        },
-        {
-            q: "Are you willing to travel?",
-            a: "Yes! Although my studio is in New Jersey, I’m more than happy and flexible to travel within AND beyond the borders of the United States. With a portable and easily transportable setup, I am well-equipped to bring my artwork to various locations, opening up remarkable opportunities to share my creativity with a global audience.",
-        },
-        {
-            q: "Tell more about you?",
-            a: "A talented artist. A Biomedical Engineering graduate from Rutgers University. I use my engineering knowledge to create intricate designs that are not only aesthetically pleasing but also a testament to my skills as an engineer. My passion for sports is reflected in my work, as i love creating headshots of professional athletes",
-        },
-    ];
+    export let faqs 
 
     let a = "";
 </script>

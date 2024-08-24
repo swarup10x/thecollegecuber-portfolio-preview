@@ -8,6 +8,9 @@
   import PortfolioSection from "../lib/sections/PortfolioSection.svelte";
   import TestimonialsSection from "../lib/sections/TestimonialsSection.svelte";
   import TopbarSection from "../lib/sections/TopbarSection.svelte";
+
+  export let data;
+  console.log("pageData from +page.svelte",data)
 </script>
 
 <div class="wrapper">
@@ -15,7 +18,7 @@
     <TopbarSection />
   </section>
   <main>
-    <HeroText />
+    <HeroText {data}/>
   </main>
 
   <section class="canvasWrapper">
@@ -25,14 +28,14 @@
     <PortfolioHeader />
 
 
-    <PortfolioSection />
+    <PortfolioSection {data}/>
     <PortfolioHeader title="Info" />
-    <InfoSection />
+    <InfoSection {data}/>
     <PortfolioHeader title="Creative Process" />
-    <CreativeProcessSection />
+    <CreativeProcessSection {data}/>
     <PortfolioHeader title="Testimonials" />
-    <TestimonialsSection />
-    <FooterSection />
+    <TestimonialsSection {data}/>
+    <FooterSection {data}/>
   </section>
 </div>
 
@@ -68,9 +71,7 @@
     height: 100vh;
     width: 100%;
   }
-  .dummy-data {
-    color: #2c312f;
-  }
+
 
   .canvasWrapper {
     position: fixed;
@@ -84,12 +85,7 @@
     width: 100%;
   }
 
-  img {
-    border: 0;
-    max-width: 100%;
-    vertical-align: middle;
-    display: inline-block;
-  }
+
 
   @media screen and (max-width: 600px) {
     main{

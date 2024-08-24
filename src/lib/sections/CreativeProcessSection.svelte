@@ -7,11 +7,18 @@
   import { onMount } from "svelte";
   import { inview } from "svelte-inview";
 
+  export let data;
+  
+    let image1=data.page.creativeProcess.image1
+    let image2=data.page.creativeProcess.image2
+    let narrative1=data.page.creativeProcess.narrative1
+    let narrative2=data.page.creativeProcess.narrative2
+
   let isInView;
   const options = {};
 
   function changeInview(event) {
-    const { inView, entry, scrollDirection, observer, node } = event.detail;
+    const { inView } = event.detail;
     isInView = inView;
     console.log("let isInView: boolean;", isInView);
   }
@@ -34,12 +41,12 @@
         }}
         class="creative-process-container"
       >
-        <img src="images/Rectangle-16.jpg" class="image-container" />
-        <CreativeNarrativeBlock />
+        <img src={image1} class="image-container" />
+        <CreativeNarrativeBlock {narrative1}/>
       </div>
       <div class="creative-process-container">
-        <CreativeProcessSnippet />
-        <img src="images/Rectangle-16-1.jpg" class="image-container" />
+        <CreativeProcessSnippet {narrative2}/>
+        <img src={image2} class="image-container" />
       </div>
     {/if}
   </div>

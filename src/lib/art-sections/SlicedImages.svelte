@@ -12,6 +12,8 @@
     const scrollRange = 500; // Total scroll amount for the animation
     const iterations = 30; // Number of steps in the animation
 
+    export let gridImageSrc
+
     onMount(() => {
         imgGrid = document.querySelectorAll(".imgGrid img");
         imageBox = document.getElementById("image-box");
@@ -108,7 +110,7 @@
     }
 </script>
 
-<img bind:this={mainImage} src="/grid-image/myimg.jpg" class="main-image" />
+<img bind:this={mainImage} src={gridImageSrc} class="main-image"  crossOrigin="anonymous"/>
 
 <div class="box">
     <div bind:this={imageBox} class="imgGrid" id="image-box">

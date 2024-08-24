@@ -5,6 +5,8 @@ import FrontContactUs from "../../lib/contact-us-sections/FrontContactUs.svelte"
     import FooterSection from "../../lib/sections/FooterSection.svelte";
     import TopbarSection from "../../lib/sections/TopbarSection.svelte";
 
+    export let data
+    console.log('data from contact-us',data)
 </script>
 
 <div class="wrapper">
@@ -16,7 +18,9 @@ import FrontContactUs from "../../lib/contact-us-sections/FrontContactUs.svelte"
 
 
 <VideoSection/>
-<FooterSection/>
+
+
+<FooterSection {data}/>
 
 </div>
 

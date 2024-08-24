@@ -1,6 +1,9 @@
 <script>
     import CalendarIcon from "./CalendarIcon.svelte";
 
+    export let data;
+    console.log(data)
+
 </script>
 <div class="artist-call-section2">
    <div class="artist-call-section">

@@ -7,6 +7,13 @@
     import CircularSelector from "../components/CircularSelector.svelte";
     import ReviewItem from "../components/ReviewItem.svelte";
 
+    export let data;
+    console.log("pageData from testimonial",data)
+    let testimonialHeading=data.page.testimonial.heading
+    let testimonialOverview=data.page.testimonial.overview
+    
+
+
     onMount(() => {
         console.log("review mounted");
     });
@@ -20,47 +27,9 @@
         console.log("let isInView: boolean;", isInView);
     }
 
-    let reviews = [
-        {
-            fullName: "New York Jets",
-            shortName: "@nyjets",
-            logoSrc: "images/reviews/image_2d2546ce.png",
-            quote: "The College Cuber is CRAZY! 🤯",
-        },
-        {
-            fullName: "Detroit Tigers",
-            shortName: "@tigers",
-            logoSrc:
-                "images/reviews/800px-Detroit_Tigers_Insigniasvg-photoaidcom-cropped.png",
-            quote: "This Miggy portrait is awesome! 🤯",
-        },
-        {
-            fullName: "New York Knicks",
-            shortName: "@nyknicks",
-            logoSrc:
-                "images/reviews/New_York_Knicks_logosvg-photoaidcom-cropped.png",
-            quote: "Hometown kid put a masterpiece together! 🤯",
-        },
-        {
-            fullName: "Detroit Red Wings",
-            shortName: "@detroitredwings",
-            logoSrc:
-                "images/reviews/detroit-red-wings-logo-photoaidcom-cropped.png",
-            quote: "Well this is certainly the coolest thing you’ll see today. 🔥🔥🔥",
-        },
-        {
-            fullName: "FC Barcelona",
-            shortName: "@fcbarcelona",
-            logoSrc: "images/reviews/802_fcbarcelona.jpg",
-            quote: "😳 Insanely talented!\n💙❤️ Quin talent! | ¡Qué talento!\n🔝",
-        },
-        {
-            fullName: "US Open",
-            shortName: "@usopen",
-            logoSrc: "images/reviews/channels4_profile-photoaidcom-cropped.png",
-            quote: "The fun NEVER stops with The College Cuber! 🔥",
-        },
-    ];
+
+
+    let reviews=data.page.testimonial.reviews
 
     let selectorCount = parseInt(Math.ceil(reviews.length / 2));
     let selectorCountArray = Array.from(
@@ -93,11 +62,9 @@
             }}
             class="testimonial-container"
         >
-            <p class="testimonial-heading">What they have to say</p>
+            <p class="testimonial-heading">{testimonialHeading}</p>
             <p class="artist-quote">
-                An artist inherently appreciates their own creations, but the
-                most remarkable experience is when others wholeheartedly endorse
-                their work.
+                {testimonialOverview}
             </p>
 
             <button class="primary-button">Contact Us</button>
