@@ -62,6 +62,9 @@
   {/if}
   
   <style>
+        :global(body) {
+        font-family: Inter;
+    }
     .login-container {
       max-width: 300px;
       margin: 0 auto;
