@@ -56,6 +56,55 @@
                             type="text"
                         />
                     </div>
+                    <div>
+                        <label for="twitter">Twitter url</label>
+                        <input
+                            id="twitter"
+                            bind:value={portfolioPage.socialLinks.twitter}
+                            type="text"
+                        />
+                    </div>
+                    <div>
+                        <label for="facebook">facebook url</label>
+                        <input
+                            id="facebook"
+                            bind:value={portfolioPage.socialLinks.facebook}
+                            type="text"
+                        />
+                    </div>
+                    <div>
+                        <label for="linkedin">linkedin url</label>
+                        <input
+                            id="linkedin"
+                            bind:value={portfolioPage.socialLinks.linkedin}
+                            type="text"
+                        />
+                    </div>
+                    <div>
+                        <label for="instagram">instagram url</label>
+                        <input
+                            id="instagram"
+                            bind:value={portfolioPage.socialLinks.instagram}
+                            type="text"
+                        />
+                    </div>
+                    <div>
+                        <label for="youtube">youtube url</label>
+                        <input
+                            id="youtube"
+                            bind:value={portfolioPage.socialLinks.youtube}
+                            type="text"
+                        />
+                    </div>
+                    <div>
+                        <label for="tiktok">tiktok url</label>
+                        <input
+                            id="tiktok"
+                            bind:value={portfolioPage.socialLinks.tiktok}
+                            type="text"
+                        />
+                    </div>
+           
                 </div>
             </div>
         </div>

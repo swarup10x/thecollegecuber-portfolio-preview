@@ -12,7 +12,7 @@ import FrontContactUs from "../../lib/contact-us-sections/FrontContactUs.svelte"
 <div class="wrapper">
 
 <TopbarSection/>
-<FrontContactUs/>
+<FrontContactUs {data}/>
 
 <CalendarSection/>
 

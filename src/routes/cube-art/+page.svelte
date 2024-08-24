@@ -41,7 +41,7 @@
 
     <div class="mid-section">
         <FaqSection faqs={data.page.cubeArt.faqs}/>
-        <WorkInfo title={data.page.cubeArt.workInfoTitle} description={data.page.cubeArt.workInfoDescription}/>
+        <WorkInfo title={data.page.cubeArt.workInfoTitle} description={data.page.cubeArt.workInfoDescription} {data}/>
         <SlicedImages gridImageSrc={data.page.cubeArt.gridImageSrc}/>
     </div>
 

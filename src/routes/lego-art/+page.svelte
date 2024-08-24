@@ -35,7 +35,7 @@
 
     <div class="mid-section">
         <FaqSection faqs={data.page.legoArt.faqs}/>
-        <WorkInfo title={data.page.legoArt.workInfoTitle} description={data.page.legoArt.workInfoDescription}/>
+        <WorkInfo title={data.page.legoArt.workInfoTitle} description={data.page.legoArt.workInfoDescription} {data}/>
         <SlicedImages gridImageSrc={data.page.legoArt.gridImageSrc}/>
     </div>
     

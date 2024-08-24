@@ -3,6 +3,15 @@
    import { quintOut } from "svelte/easing";
    import { onMount } from "svelte";
 
+   export let data;
+
+   let twitter = data.page.socialLinks.twitter;
+   let facebook = data.page.socialLinks.twitter;
+   let linkedin = data.page.socialLinks.linkedin;
+   let instagram = data.page.socialLinks.instagram;
+   let youtube = data.page.socialLinks.youtube;
+   let tiktok = data.page.socialLinks.tiktok;
+
    let showProfile = false;
 
    // Set showProfile to true after the component is mounted
@@ -99,37 +108,37 @@
                   </div>
                </div>
                <div class="gallery-container">
-                  <a href="https://twitter.com/thecollegecuber?lang=en">
+                  <a href={twitter}>
                      <img
                         src="/contact-us-images/image_9c4e1876.png"
                         class="hierarchical-image-container"
                      />
                   </a>
-                  <a href="https://www.facebook.com/thecollegecuber/">
+                  <a href={facebook}>
                      <img
                         src="/contact-us-images/image_a02c3648.png"
                         class="hierarchical-image-container"
                      />
                   </a>
-                  <a href="https://www.linkedin.com/in/dylan-sadiq-34a25b19b">
+                  <a href={linkedin}>
                      <img
                         src="/contact-us-images/image_8427112a.png"
                         class="hierarchical-image-container"
                      />
                   </a>
-                  <a href="https://www.instagram.com/thecollegecuber_/">
+                  <a href={instagram}>
                      <img
                         src="/contact-us-images/image_7896fe92.png"
                         class="hierarchical-image-container"
                      />
                   </a>
-                  <a href="https://www.youtube.com/@thecollegecuber">
+                  <a href={youtube}>
                      <img
                         src="/contact-us-images/image_be50ad04.png"
                         class="hierarchical-image-container"
                      />
                   </a>
-                  <a href="https://www.linkedin.com/in/dylan-sadiq-34a25b19b">
+                  <a href={tiktok}>
                      <img
                         src="/contact-us-images/image_ff0deeba.png"
                         class="hierarchical-image-container"

@@ -1,6 +1,14 @@
 <script>
    export let title
    export let description
+   export let data;
+
+   let twitter=data.page.socialLinks.twitter
+   let facebook=data.page.socialLinks.twitter
+   let linkedin=data.page.socialLinks.linkedin
+   let instagram=data.page.socialLinks.instagram
+   let youtube=data.page.socialLinks.youtube
+   let tiktok=data.page.socialLinks.tiktok
 </script>
 
 <div class="div-style-63bd3093">
@@ -12,37 +20,37 @@
          {description}
       </p>
       <div class="div-style-350cca7a">
-         <a href="https://twitter.com/thecollegecuber?lang=en">
+         <a href={twitter}>
             <img
                src="/art-page-images/image_41c4746e.png"
                class="img-style-7e80d45"
             />
          </a>
-         <a href="https://www.facebook.com/thecollegecuber/">
+         <a href={facebook}>
             <img
                src="/art-page-images/image_2e596716.png"
                class="img-style-7e80d45"
             />
          </a>
-         <a href="https://www.linkedin.com/in/dylan-sadiq-34a25b19b">
+         <a href={linkedin}>
             <img
                src="/art-page-images/image_2703b701.png"
                class="img-style-7e80d45"
             /></a
          >
-         <a href="https://www.instagram.com/thecollegecuber_/">
+         <a href={instagram}>
             <img
                src="/art-page-images/image_7896fe92.png"
                class="img-style-2aac90a5"
             />
          </a>
-         <a href="https://www.youtube.com/@thecollegecuber">
+         <a href={youtube}>
             <img
                src="/art-page-images/image_7a770a75.png"
                class="img-style-771a746"
             />
          </a>
-         <a href="https://www.linkedin.com/in/dylan-sadiq-34a25b19b">
+         <a href={tiktok}>
             <img
                src="/art-page-images/image_ff0deeba.png"
                class="img-style-38242fd5"
