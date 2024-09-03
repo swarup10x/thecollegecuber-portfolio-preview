@@ -153,7 +153,7 @@
         flex-direction: row-reverse;
         gap: 40px;
         padding: 0 6px;
-        margin-bottom: 80px;
+        margin-bottom: 100px;
     }
 
     @media screen and (max-width: 720px) {
