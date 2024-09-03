@@ -117,7 +117,7 @@
         margin: 0;
         margin-top: 7px;
         font:
-            400 18px Inter,
+            400 20px Inter,
             sans-serif;
         color: white;
         width: 100%;
@@ -152,7 +152,7 @@
         justify-content: center;
         flex-direction: row-reverse;
         gap: 40px;
-        padding: 0 4px;
+        padding: 0 6px;
     }
 
     @media screen and (max-width: 720px) {
