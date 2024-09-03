@@ -8,7 +8,6 @@
     import WorkInfo from "../../lib/art-sections/WorkInfo.svelte";
     import TopbarSection from "../../lib/sections/TopbarSection.svelte";
     import FooterSection from "../../lib/sections/FooterSection.svelte";
-    import SplineLegoAnimation from "../../lib/animations-3d/SplineLegoAnimation.svelte";
     import SplineRubiksCubeAnimation from "../../lib/animations-3d/SplineRubiksCubeAnimation.svelte";
     import PerfectForEventSection from "../../lib/art-sections/PerfectForEventSection.svelte";
 
@@ -36,13 +35,12 @@
         </div>
     </div>
 
-     <HowItWorks videoSrc={data.page.cubeArt.videoSrc} howItWorks={data.page.cubeArt.howItWorks} {artType}/>
+     <HowItWorks data={data} videoSrc={data.page.cubeArt.videoSrc} howItWorks={data.page.cubeArt.howItWorks} {artType}/>
 
 
     <div class="mid-section">
         <FaqSection faqs={data.page.cubeArt.faqs}/>
         <WorkInfo title={data.page.cubeArt.workInfoTitle} description={data.page.cubeArt.workInfoDescription} {data}/>
-        <SlicedImages gridImageSrc={data.page.cubeArt.gridImageSrc}/>
     </div>
 
     <div class="events-list">

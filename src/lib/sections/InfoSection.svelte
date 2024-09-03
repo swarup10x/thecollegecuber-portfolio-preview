@@ -32,6 +32,7 @@
         box-sizing: border-box;
         flex: 0uto;
         padding: 108px 40px 166px;
+        background-color: #0a100d;
     }
     .sophisticated-text-styles {
         box-sizing: border-box;

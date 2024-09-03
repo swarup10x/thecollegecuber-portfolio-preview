@@ -1,150 +1,149 @@
 <script>
-    import { fly } from "svelte/transition";
-    import { quintOut, linear } from "svelte/easing";
-    import PortfolioItem from "../components/PortfolioItem.svelte";
+    import { onMount, onDestroy } from "svelte";
 
-    export let data ;
-     let allPortfolios=data.page.portfolios ;
+    export let data;
+    let allPortfolios = data.page.portfolios;
+    let src = allPortfolios[0].src;
+    let currentIndex = 0;
 
-    let pagination = 1;
-    let canLoadMore = true;
-    const itemsPerPage = 4;
-    let maxPagination = Math.ceil(allPortfolios.length / itemsPerPage);
+    let observer;
 
-    // Initialize with the first four portfolios
-    let calculatedPortfolios = [allPortfolios.slice(0, itemsPerPage)];
+    onMount(() => {
+        console.log("Component mounted");
+        console.log("Initial portfolios:", allPortfolios);
 
-    console.log("calculatedPortfolios", calculatedPortfolios);
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.5,
+        };
 
-    function loadPortfolio() {
-        const start = pagination * itemsPerPage;
-        const end = start + itemsPerPage;
-        const nextPortfolios = allPortfolios.slice(start, end);
-        pagination += 1;
+        observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const index = parseInt(entry.target.dataset.index, 10);
+                    console.log("Item intersecting:", index);
+                    if (index !== currentIndex) {
+                        currentIndex = index;
+                        src = allPortfolios[index].src;
+                        console.log("Updated src:", src);
+                    }
+                }
+            });
+        }, options);
 
-        calculatedPortfolios = [...calculatedPortfolios, [...nextPortfolios]];
+        const elements = document.querySelectorAll(".work-item-wrapper");
+        elements.forEach((el, index) => {
+            el.dataset.index = index;
+            observer.observe(el);
+            console.log("Observing element:", index);
+        });
+    });
 
-        if (pagination >= maxPagination) {
-            canLoadMore = false;
+    onDestroy(() => {
+        if (observer) {
+            observer.disconnect();
         }
-    }
+    });
 </script>
 
 <div class="portfolio-pagination">
-    {#each calculatedPortfolios as portfolios}
-        <div
-            id="work"
-            class="work-grid"
-            transition:fly={{
-                delay: 100,
-                duration: 500,
-                y: 200,
-                opacity: 0.5,
-                easing: quintOut,
-            }}
-        >
-            {#each portfolios as portfolio}
-                <PortfolioItem {portfolio} />
-            {/each}
+    <div class="image-box-wrapper">
+        <div class="image-wrapper">
+            <img class="portfolio-image" {src} alt="" />
         </div>
-    {/each}
-
-    <!-- HTML !-->
-    {#if canLoadMore}
-        <div class="button-wrapper">
-            <button on:click={loadPortfolio} class="button-load-more"
-                >Watch More</button
-            >
-        </div>
-    {/if}
+    </div>
+    <div class="description-wrapper">
+        {#each allPortfolios as portfolio, index}
+            <div class="work-item-wrapper w-inline-block" data-index={index}>
+                <div class="item-title">{portfolio.title}</div>
+                <div class="item-description">{portfolio.description}</div>
+            </div>
+        {/each}
+    </div>
 </div>
 
 <style>
-    .button-wrapper {
+    .description-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: calc(100vh - 150px);
+    }
+    .portfolio-image {
+        object-fit: contain;
+        width: 280px;
+        height: 280px;
+    }
+    .image-wrapper {
+        width: 300px;
+        height: 300px;
         display: grid;
         place-items: center;
-        /* padding: 36px; */
-        padding-top: 72px;
-    }
-    .button-load-more {
-        appearance: button;
-        background-color: #16181d;
-        border: 1px solid #343948;
+        background-color: black;
         border-radius: 4px;
-        box-sizing: border-box;
-        color: #ffffff;
-        cursor: pointer;
-        font-family:
-            Graphik,
-            -apple-system,
-            system-ui,
-            "Segoe UI",
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            "Fira Sans",
-            "Droid Sans",
-            "Helvetica Neue",
+    }
+    .image-box-wrapper {
+        position: sticky;
+        top: calc(50vh - 150px);
+
+        height: 300px;
+    }
+    .item-title {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        margin-top: 7px;
+        font:
+            400 18px Inter,
             sans-serif;
-        font-size: 14px;
-        line-height: 1.15;
-        overflow: visible;
-        padding: 12px 16px;
-        position: relative;
-        text-align: center;
-        text-transform: none;
-        transition: all 80ms ease-in-out;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        width: fit-content;
+        color: white;
+        width: 100%;
+    }
+    .item-description {
+        font:
+            400 14px Inter,
+            sans-serif;
+        color: rgb(209, 209, 209);
     }
 
-    .button-load-more:disabled {
-        opacity: 0.5;
+    .work-item-wrapper {
+        margin-top: 50px;
+        /* height: 100vh; */
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: #edf2f4;
+        text-decoration: none;
+        overflow: hidden; /* Ensure the image doesn't overflow */
+        width: 300px;
+        display: flex;
+        gap: 20px;
     }
 
-    .button-load-more:focus {
-        outline: 0;
-    }
-
-    .button-load-more:hover {
-        background-color: #000000;
-        border-color: #434343;
-    }
-
-    .button-load-more:active {
-        background-color: #000000;
-        border-color: #434343;
-    }
     .portfolio-pagination {
-        display: grid;
+        display: flex;
         padding-bottom: 100px;
+        position: relative;
+        background-color: #0a100d;
+        justify-content: center;
+        flex-direction: row-reverse;
+        gap: 40px;
     }
 
-    .work-grid {
-        display: -ms-grid;
-        display: grid;
-        padding-top: 1%;
-        padding-right: 2%;
-        padding-left: 2%;
-        grid-auto-columns: 1fr;
-        grid-column-gap: 1rem;
-        grid-row-gap: 1rem;
-        -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        -ms-grid-rows: auto auto;
-        grid-template-rows: auto auto;
-        /* padding-bottom: 100px; */
-    }
-    @media screen and (max-width: 640px) {
-        .work-grid {
-            padding-right: 5%;
-            padding-left: 5%;
-            -ms-grid-columns: 1fr;
-            grid-template-columns: 1fr;
-            grid-gap: 1.25rem;
+    @media screen and (max-width: 720px) {
+        .image-box-wrapper {
+            top: 0;
+        }
+
+        .portfolio-pagination {
+            flex-direction: column;
+            align-items: center;
+        }
+        .description-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: calc(100vh - 400px);
         }
     }
 </style>

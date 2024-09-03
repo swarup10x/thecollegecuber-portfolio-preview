@@ -14,7 +14,7 @@ import FrontContactUs from "../../lib/contact-us-sections/FrontContactUs.svelte"
 <TopbarSection/>
 <FrontContactUs {data}/>
 
-<CalendarSection/>
+<!-- <CalendarSection/> -->
 
 
 <VideoSection/>

@@ -30,13 +30,14 @@
             <FrontView landingText={data.page.legoArt.landingText}/>
         </div>
     </div>
-
-    <HowItWorks videoSrc={data.page.legoArt.videoSrc} howItWorks={data.page.legoArt.howItWorks} {artType}/>
+    
+    <HowItWorks data={data} videoSrc={data.page.legoArt.videoSrc} howItWorks={data.page.legoArt.howItWorks} {artType}/>
+    <!-- <SlicedImages gridImageSrc={data.page.legoArt.gridImageSrc}/> -->
 
     <div class="mid-section">
         <FaqSection faqs={data.page.legoArt.faqs}/>
         <WorkInfo title={data.page.legoArt.workInfoTitle} description={data.page.legoArt.workInfoDescription} {data}/>
-        <SlicedImages gridImageSrc={data.page.legoArt.gridImageSrc}/>
+        <!-- <SlicedImages gridImageSrc={data.page.legoArt.gridImageSrc}/> -->
     </div>
     
     <div class="events-list">

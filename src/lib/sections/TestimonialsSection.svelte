@@ -126,6 +126,7 @@
         align-items: center;
         justify-content: flex-start;
         padding: 159px 119px 235px;
+        background-color: #0a100d;
     }
     .testimonial-container {
         box-sizing: border-box;

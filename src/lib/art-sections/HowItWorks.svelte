@@ -1,7 +1,10 @@
 <script>
+    import SlicedImages from "./SlicedImages.svelte";
+
    export let videoSrc
    export let howItWorks
    export let artType
+   export let data
 </script>
 
 <div class="div-style-7c40600a">
@@ -14,7 +17,8 @@
       <!-- Button Component is detected here -->
       <button class="button-style-8ad96753">Book a Call</button>
     </div>
-    <video class="img-style-8062128" src={videoSrc} autoplay="true" loop="true" controls muted="muted" playsinline="" controlslist="nodownload"></video>
+    <!-- <video class="img-style-8062128" src={videoSrc} autoplay="true" loop="true" controls muted="muted" playsinline="" controlslist="nodownload"></video> -->
+    <SlicedImages gridImageSrc={data.page.legoArt.gridImageSrc}/>
   </div>
 
   
@@ -25,7 +29,7 @@
    flex: 0 0 auto;
    flex-direction: row;
    gap: 8px;
-   align-items: flex-start;
+   align-items: center;
    justify-content: space-between;
    padding: 148px 144px 106px;
    background: #151414;

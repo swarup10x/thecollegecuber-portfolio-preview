@@ -9,10 +9,10 @@
     let scrollY = 0;
     let startPosition = 0;
     let endPosition = 0;
-    const scrollRange = 500; // Total scroll amount for the animation
-    const iterations = 30; // Number of steps in the animation
+    const scrollRange = 400; // Total scroll amount for the animation
+    let isReset = true;
 
-    export let gridImageSrc
+    export let gridImageSrc;
 
     onMount(() => {
         imgGrid = document.querySelectorAll(".imgGrid img");
@@ -45,8 +45,19 @@
     }
 
     function updateImageTransforms() {
-        if (scrollY < startPosition || scrollY > endPosition) return;
+        if (scrollY < startPosition || scrollY > endPosition) {
+            // Only reset if not already at 0
+            if (!isReset) {
+                imgGrid.forEach((imgElement) => {
+                    imgElement.style.transform =
+                        "translate3d(0, 0, 0) rotateZ(0deg) scale3d(1, 1, 1)";
+                });
+                isReset = true;
+            }
+            return;
+        }
 
+        isReset = false;
         const progress = (scrollY - startPosition) / scrollRange;
 
         imgGrid.forEach((imgElement, index) => {
@@ -110,7 +121,12 @@
     }
 </script>
 
-<img bind:this={mainImage} src={gridImageSrc} class="main-image"  crossOrigin="anonymous"/>
+<img
+    bind:this={mainImage}
+    src={gridImageSrc}
+    class="main-image"
+    crossOrigin="anonymous"
+/>
 
 <div class="box">
     <div bind:this={imageBox} class="imgGrid" id="image-box">
@@ -128,11 +144,11 @@
 
 <style>
     .box {
-        width: 100%;
+        width: fit-content;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #e4e4e4;
+        /* background-color: #e4e4e4; */
         overflow: hidden;
     }
     .imgGrid {
@@ -140,7 +156,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        gap: 2px;
+        /* gap: 1px; */
         width: 300px;
         height: 300px;
     }
