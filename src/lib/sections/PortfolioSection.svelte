@@ -49,24 +49,23 @@
     });
 </script>
 
+<div class="wrapper">
+
 <div class="portfolio-pagination">
     <div class="image-box-wrapper">
         <div class="image-wrapper">
             {#key src}
                 <img
+                out:fade={{
+                    duration: 200,
+                    easing: linear,
+                }}
+                in:fade={{delay:200}}
                     class="portfolio-image"
                     {src}
                     alt=""
                 />
-                <!-- <img
-                    transition:scale={{
-                        duration: 500,
-                        easing: linear,
-                    }}
-                    class="portfolio-image"
-                    {src}
-                    alt=""
-                /> -->
+
             {/key}
         </div>
     </div>
@@ -79,12 +78,18 @@
         {/each}
     </div>
 </div>
-
+</div>
 <style>
+    .wrapper{
+        display: grid;
+        place-items: center;
+    }
     .description-wrapper {
         display: flex;
         flex-direction: column;
         gap: calc(100vh - 150px);
+        margin-top: 48px;
+        margin-bottom: 16px;
     }
     .portfolio-image {
         object-fit: contain;
@@ -100,6 +105,7 @@
         border-radius: 4px;
     }
     .image-box-wrapper {
+        margin-top: 40px;
         position: sticky;
         top: calc(50vh - 150px);
 
@@ -146,6 +152,7 @@
         justify-content: center;
         flex-direction: row-reverse;
         gap: 40px;
+        padding: 0 4px;
     }
 
     @media screen and (max-width: 720px) {
