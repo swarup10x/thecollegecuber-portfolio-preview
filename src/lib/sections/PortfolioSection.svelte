@@ -153,6 +153,7 @@
         flex-direction: row-reverse;
         gap: 40px;
         padding: 0 6px;
+        margin-bottom: 60px;
     }
 
     @media screen and (max-width: 720px) {
@@ -163,6 +164,7 @@
         .portfolio-pagination {
             flex-direction: column;
             align-items: center;
+     
         }
         .description-wrapper {
             display: flex;
