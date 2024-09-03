@@ -1,5 +1,7 @@
 <script>
     import { onMount, onDestroy } from "svelte";
+    import { linear, quintOut } from "svelte/easing";
+    import { blur, crossfade, fade, fly, scale } from "svelte/transition";
 
     export let data;
     let allPortfolios = data.page.portfolios;
@@ -50,7 +52,22 @@
 <div class="portfolio-pagination">
     <div class="image-box-wrapper">
         <div class="image-wrapper">
-            <img class="portfolio-image" {src} alt="" />
+            {#key src}
+                <img
+                    class="portfolio-image"
+                    {src}
+                    alt=""
+                />
+                <!-- <img
+                    transition:scale={{
+                        duration: 500,
+                        easing: linear,
+                    }}
+                    class="portfolio-image"
+                    {src}
+                    alt=""
+                /> -->
+            {/key}
         </div>
     </div>
     <div class="description-wrapper">
